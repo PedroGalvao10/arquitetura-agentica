@@ -1,0 +1,75 @@
+<current_dom_explanation>
+This is a temporary snapshot of the current page's DOM structure. The DOM will change if you navigate to or interact with another page. Use a tool like browser_get_dom to capture and preserve the DOM in your trajectory if needed for later reference.
+</current_dom_explanation>
+<current_dom>
+Ir para o conteúdo principal
+Ajuda sobre acessibilidade
+Feedback de acessibilidade
+[0] (65,73)<a aria-label='Ir para a página inicial do Google' href='https://www.google.com/webhp?hl=pt-BR&sa=X&ved=0ahUKEwiByLym5PWTAxWBJ7kGHe5zMhUQPAgJ' id='logo' title='Ir para a página inicial do Google' />
+[1] (339,71)<textarea aria-label='Pesquisar' class='gLFyf' id='APjFqb' role='combobox' />
+[2] (557,71)<div  />
+	[3] (556,71)<div aria-label='Limpar' class='vOY7J M2vV3' role='button' />
+		[4] (556,71)<span  />
+	[5] (572,71)<span  />
+[6] (588,71)<div aria-label='Ferramentas de inserção de texto' class='Umvnrc' role='button' />
+	[7] (588,71)<span  />
+[8] (614,71)<div aria-label='Pesquisar por voz' class='XDyW0e' role='button' />
+[9] (640,71)<div aria-label='Pesquisa por imagem' class='nDcEnd' role='button' />
+[10] (670,71)<button aria-label='Pesquisar' class='HZVG1b Tg7LZd' />
+	[11] (665,71)<div  />
+		[12] (665,71)<span  />
+[13] (868,71)<div aria-label='Configurações' class='fLciMb' id='og-te' role='button' />
+[14] (898,71)<a aria-label='Google Apps' class='gb_C' href='https://www.google.com.br/intl/pt-BR/about/products?tab=wh' role='button' />
+[15] (947,71)<a aria-label='Fazer login' class='gb_A' href='https://accounts.google.com/ServiceLogin?hl=pt-BR&passive=true&continue=https://www.google.com/search%3Fq%3DStitch%2BGoogle%2B%2522Future%2BWorkforce%2522%2BAgentic%2BOS&ec=futura_srp_og_si_72236_p'>Fazer login />
+	Fazer login
+[16] (154,156)<a class='XVMlrc C6AK7c' href='/search?q=Stitch+Google+%22Future+Workforce%22+Agentic+OS&sca_esv=d4c24c2b28f31460&udm=50&fbs=ADc_l-acAb_3MMOAUx0zmbUpgBqRiigBgL2I_pgQa-94zvB054Dys3s2x_Qm_GJcU2DlSXgs4i471_5vbbrE24Q_ZqrCyhilsPNhxfAu1wD3b9jpYfNAyTiqGpQ9M2EThp4zdpxBKrKes47Iw6Lwb-6usTr-LOA8RBy427F8KAa4CS2tstri2f4LaKtinzWI7sKLRlGurtQDl5zh3k-ktPR73JFmFGDC-Q&aep=1&ntc=1&sa=X&ved=2ahUKEwiByLym5PWTAxWBJ7kGHe5zMhUQ2J8OegQIEBAI' />
+	[17] (154,156)<div  />
+		[18] (154,168)<div  />
+			[19] (154,161)<span >Modo IA />
+[20] (197,156)<a class='C6AK7c' role='link' />
+	Tudo
+[21] (240,156)<a class='C6AK7c' href='/search?sca_esv=d4c24c2b28f31460&udm=2&fbs=ADc_l-acAb_3MMOAUx0zmbUpgBqRiigBgL2I_pgQa-94zvB054Dys3s2x_Qm_GJcU2DlSXgs4i471_5vbbrE24Q_ZqrCyhilsPNhxfAu1wD3b9jpYfNAyTiqGpQ9M2EThp4zdpxBKrKes47Iw6Lwb-6usTr-LOA8RBy427F8KAa4CS2tstri2f4LaKtinzWI7sKLRlGurtQDl5zh3k-ktPR73JFmFGDC-Q&q=Stitch+Google+%22Future+Workforce%22+Agentic+OS&sa=X&ved=2ahUKEwiByLym5PWTAxWBJ7kGHe5zMhUQtKgLegQIFhAB' />
+	[22] (240,156)<div  />
+		[23] (240,168)<span >Imagens />
+[24] (287,156)<a class='C6AK7c' href='/search?sca_esv=d4c24c2b28f31460&udm=7&fbs=ADc_l-acAb_3MMOAUx0zmbUpgBqRiigBgL2I_pgQa-94zvB054Dys3s2x_Qm_GJcU2DlSXgs4i471_5vbbrE24Q_ZqrCyhilsPNhxfAu1wD3b9jpYfNAyTiqGpQ9M2EThp4zdpxBKrKes47Iw6Lwb-6usTr-LOA8RBy427F8KAa4CS2tstri2f4LaKtinzWI7sKLRlGurtQDl5zh3k-ktPR73JFmFGDC-Q&q=Stitch+Google+%22Future+Workforce%22+Agentic+OS&sa=X&ved=2ahUKEwiByLym5PWTAxWBJ7kGHe5zMhUQtKgLegQIExAB' />
+	[25] (287,156)<div  />
+		[26] (287,168)<span >Vídeos />
+[27] (334,156)<a class='C6AK7c' href='/search?sca_esv=d4c24c2b28f31460&q=Stitch+Google+%22Future+Workforce%22+Agentic+OS&tbm=nws&source=lnms&fbs=ADc_l-acAb_3MMOAUx0zmbUpgBqRiigBgL2I_pgQa-94zvB054Dys3s2x_Qm_GJcU2DlSXgs4i471_5vbbrE24Q_ZqrCyhilsPNhxfAu1wD3b9jpYfNAyTiqGpQ9M2EThp4zdpxBKrKes47Iw6Lwb-6usTr-LOA8RBy427F8KAa4CS2tstri2f4LaKtinzWI7sKLRlGurtQDl5zh3k-ktPR73JFmFGDC-Q&sa=X&ved=2ahUKEwiByLym5PWTAxWBJ7kGHe5zMhUQ0pQJegQIFRAB' />
+	[28] (334,156)<div  />
+		[29] (334,168)<span >Notícias />
+[30] (394,156)<a class='C6AK7c' href='/search?sca_esv=d4c24c2b28f31460&udm=39&fbs=ADc_l-acAb_3MMOAUx0zmbUpgBqRiigBgL2I_pgQa-94zvB054Dys3s2x_Qm_GJcU2DlSXgs4i471_5vbbrE24Q_ZqrCyhilsPNhxfAu1wD3b9jpYfNAyTiqGpQ9M2EThp4zdpxBKrKes47Iw6Lwb-6usTr-LOA8RBy427F8KAa4CS2tstri2f4LaKtinzWI7sKLRlGurtQDl5zh3k-ktPR73JFmFGDC-Q&q=Stitch+Google+%22Future+Workforce%22+Agentic+OS&sa=X&ved=2ahUKEwiByLym5PWTAxWBJ7kGHe5zMhUQs6gLegQIFBAB' />
+	[31] (394,156)<div  />
+		[32] (394,168)<span >Vídeos curtos />
+[33] (456,156)<a class='C6AK7c' href='/search?sca_esv=d4c24c2b28f31460&udm=28&fbs=ADc_l-acAb_3MMOAUx0zmbUpgBqRiigBgL2I_pgQa-94zvB054Dys3s2x_Qm_GJcU2DlSXgs4i471_5vbbrE24Q_ZqrCyhilsPNhxfAu1wD3b9jpYfNAyTiqGpQ9M2EThp4zdpxBKrKes47Iw6Lwb-6usTr-LOA8RBy427F8KAa4CS2tstri2f4LaKtinzWI7sKLRlGurtQDl5zh3k-ktPR73JFmFGDC-Q&q=Stitch+Google+%22Future+Workforce%22+Agentic+OS&ved=1t:220175&ictx=111' />
+	[34] (456,156)<div  />
+		[35] (456,168)<span >Shopping />
+[36] (507,156)<div class='mTpL7c' role='button' />
+	[37] (507,156)<div  />
+		[38] (507,168)<div  />
+			[39] (501,161)<span >Mais />
+			[40] (516,161)<span  />
+Resultados da pesquisa
+Pensando
+Web results
+[41] (248,852)<a class='zReHs' href='https://www.opentext.com/br/media/ebook/the-agentic-ai-genome-ebook-en.pdf' />
+	[42] (206,882)<h3 >The Agentic AI Genome />
+	[43] (248,834)<div  />
+		[44] (248,834)<div  />
+			[45] (146,834)<span  />
+				[46] (146,834)<div  />
+					[47] (146,834)<img  />
+			[48] (261,834)<div  />
+				[49] (261,822)<div  />
+					[50] (261,822)<span >OpenText />
+				[51] (261,848)<div  />
+					[52] (261,848)<cite class='qLRx3b tjvcx GvPZzd dTxz9 cHaqb' role='text'>https://www.opentext.com />
+						[53] (293,847)<span class='ylgVCe ob9lvb' role='text'>› media › ebook › the-... />
+PDF
+[54] (379,847)<div aria-label='Sobre este resultado' class='MJ8UF iTPLzd rNSxBe eY4mx lUn2nc' role='button' />
+	[55] (379,847)<span  />
+		[56] (379,848)<span  />
+The
+future workforce
+will be able to blend traditional business domain expertise with systems thinking. The OECD AI Principles70 and UNESCO. Recommendation ...
+
+</current_dom>

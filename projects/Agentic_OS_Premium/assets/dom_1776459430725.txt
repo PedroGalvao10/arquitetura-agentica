@@ -1,0 +1,201 @@
+<current_dom_explanation>
+This is a temporary snapshot of the current page's DOM structure. The DOM will change if you navigate to or interact with another page. Use a tool like browser_get_dom to capture and preserve the DOM in your trajectory if needed for later reference.
+</current_dom_explanation>
+<current_dom>
+[0] (82,48)<a aria-label='AliExpress logo' class='pc-header--logoImg--mDbiT4k pc-header--newLogoImg--2W_qJMt' href='https://www.aliexpress.com' />
+[1] (387,47)<input aria-label='You can type an item name or keyword to search.' class='search--keyword--15P08Ji' id='search-words' placeholder='I'm shopping for...' role='searchbox' />
+[2] (614,49)<div  />
+	[3] (614,46)<img  />
+[4] (647,46)<input aria-label='You can click this button to search.' class='search--submit--2VTbd-T search--newSubmit--3BlVRKw' role='button' />
+[5] (724,47)<div aria-label='You can scan the QR code to download the AliExpress app.' class='down-load-app--menuItem--3FNru0r down_en_US down-load-app--newMenuItem--CZPqC6l' role='button' />
+	[6] (693,47)<span  />
+	[7] (732,47)<div  />
+		[8] (732,47)<b >Download the AliExpress app />
+[9] (796,47)<div  />
+	[10] (796,47)<div aria-label='You can select a country, region or language for shopping on AliExpress us. The current language is English.' class='ship-to--menuItem--WdBDsYl ship-to--newMenuItem--2Rw-XvE' role='button' />
+		[11] (779,47)<span  />
+		[12] (806,47)<div  />
+			[13] (806,33)<span >EN
+/ />
+			[14] (806,55)<b >USD />
+				[15] (814,54)<span  />
+[16] (879,47)<div aria-label='You can register, sign in or view more information about your account.' class='my-account--menuItem--1GDZChA my-account--newMenuItem--bSu9Hkj' role='button' />
+	[17] (839,47)<span  />
+	[18] (887,47)<div  />
+		[19] (887,33)<span >Welcome />
+		[20] (887,55)<b  />
+			[21] (880,55)<span >Sign in / Register />
+			[22] (918,54)<span  />
+[23] (950,47)<div  />
+	[24] (952,47)<a aria-label='0 items in cart.' href='//www.aliexpress.com/p/shoppingcart/index.html' />
+		[25] (943,47)<span  />
+		[26] (961,47)<div  />
+			[27] (961,30)<div  />
+				[28] (960,31)<span >0 />
+			[29] (961,56)<b >Cart />
+[30] (500,773)<div  />
+	[31] (161,528)<a class='recommend-card-pc--recommend-card--1uJrWhP aliexpress--recommend-card--2g1CFNi' href='https://www.aliexpress.com/item/1005008253095559.html?afTraceInfo=1005008253095559__unknown__afStaticPage__BSLLLIH__1770712427254' />
+		[32] (161,437)<div  />
+			[33] (161,437)<img  />
+			[34] (202,524)<div  />
+		[35] (161,604)<div >KZ EDX Pro Earphones Dynamic In Ear Monitor HiFi Wired Headphones Bass Stereo Game Music Earplugs Noice Cancelling Headset />
+			[36] (113,593)<div  />
+				[37] (111,593)<img  />
+			KZ EDX Pro Earphones Dynamic In Ear Monitor HiFi Wired Headphones Bass Stereo Game Music Earplugs Noice Cancelling Headset
+		[38] (161,642)<div  />
+			[39] (122,642)<div  />
+			[40] (163,642)<span >(
+10000+
+) />
+		[41] (161,676)<div  />
+			[42] (116,676)<div  />
+				[43] (103,676)<span >$ />
+				[44] (111,676)<span >0 />
+				[45] (124,676)<span >.
+99 />
+		[46] (161,711)<div  />
+			[47] (122,711)<div  />
+				[48] (122,711)<span >Save $4.62 />
+		[49] (161,739)<div  />
+			[50] (120,739)<span >Free returns />
+	[51] (297,528)<a class='recommend-card-pc--recommend-card--1uJrWhP aliexpress--recommend-card--2g1CFNi' href='https://www.aliexpress.com/item/1005010321498392.html?afTraceInfo=1005010321498392__unknown__afStaticPage__vFmwGNB__1770712427254' />
+		[52] (296,437)<div  />
+			[53] (296,437)<img  />
+			[54] (337,524)<div  />
+		[55] (297,604)<div  />
+			[56] (248,593)<div  />
+				[57] (247,593)<img  />
+			[58] (297,642)<span >2TB OTG USB Flash Drive USB 3.0 Type C For iPhone ipad 1TB 512GB 256G Pendrive Samsung Huawei Xiaomi Android Laptop Memory Stick />
+		[59] (297,642)<div  />
+			[60] (257,642)<div  />
+			[61] (297,642)<span >(
+4000+
+) />
+		[62] (297,676)<div  />
+			[63] (251,676)<div  />
+				[64] (238,676)<span >$ />
+				[65] (246,676)<span >0 />
+				[66] (259,676)<span >.
+99 />
+		[67] (297,711)<div  />
+			[68] (293,712)<div  />
+				[69] (239,712)<img  />
+				[70] (298,711)<span >New shoppers save $4.44 />
+		[71] (297,739)<div  />
+			[72] (256,739)<span >Free returns />
+	[73] (432,528)<a class='recommend-card-pc--recommend-card--1uJrWhP aliexpress--recommend-card--2g1CFNi' href='https://www.aliexpress.com/item/1005006893741431.html?afTraceInfo=1005006893741431__unknown__afStaticPage__46GSp70__1770712427254' />
+		[74] (432,437)<div  />
+			[75] (432,437)<img  />
+			[76] (473,524)<div  />
+		[77] (432,604)<div >Car Window Cleaner Brush Kit Windshield Cleaning Wash Tool Inside Interior Auto Glass Wiper with Long Handle Car Accessories />
+			[78] (384,593)<div  />
+				[79] (382,593)<img  />
+			Car Window Cleaner Brush Kit Windshield Cleaning Wash Tool Inside Interior Auto Glass Wiper with Long Handle Car Accessories
+		[80] (432,642)<div  />
+			[81] (393,642)<div  />
+			[82] (434,642)<span >(
+10000+
+) />
+		[83] (432,676)<div  />
+			[84] (387,676)<div  />
+				[85] (374,676)<span >$ />
+				[86] (381,676)<span >0 />
+				[87] (395,676)<span >.
+99 />
+		[88] (432,711)<div  />
+			[89] (428,712)<div  />
+				[90] (375,712)<img  />
+				[91] (433,711)<span >New shoppers save $5.82 />
+		[92] (432,739)<div  />
+			[93] (391,739)<span >Free returns />
+	[94] (568,528)<a class='recommend-card-pc--recommend-card--1uJrWhP aliexpress--recommend-card--2g1CFNi' href='https://www.aliexpress.com/item/1005007140743658.html?afTraceInfo=1005007140743658__unknown__afStaticPage__nhrmoon__1770712427255' />
+		[95] (567,437)<div  />
+			[96] (567,437)<img  />
+			[97] (608,524)<div  />
+		[98] (568,604)<div >Original QKZ AK6 In Ear Earphone 6 Dynamic Driver Unit Headphone With Mic Stereo Sports HIFI Subwoofer Headset Monitor Earbuds />
+			[99] (519,593)<div  />
+				[100] (518,593)<img  />
+			Original QKZ AK6 In Ear Earphone 6 Dynamic Driver Unit Headphone With Mic Stereo Sports HIFI Subwoofer Headset Monitor Earbuds
+		[101] (568,642)<div  />
+			[102] (528,642)<div  />
+			[103] (570,642)<span >(
+10000+
+) />
+		[104] (568,676)<div  />
+			[105] (522,676)<div  />
+				[106] (509,676)<span >$ />
+				[107] (517,676)<span >0 />
+				[108] (530,676)<span >.
+99 />
+		[109] (568,711)<div  />
+			[110] (564,712)<div  />
+				[111] (510,712)<img  />
+				[112] (569,711)<span >New shoppers save $6.67 />
+		[113] (568,739)<div  />
+			[114] (527,739)<span >Free returns />
+	[115] (703,528)<a class='recommend-card-pc--recommend-card--1uJrWhP aliexpress--recommend-card--2g1CFNi' href='https://www.aliexpress.com/item/1005010017311007.html?afTraceInfo=1005010017311007__unknown__afStaticPage__QM2Xxko__1770712427255' />
+		[116] (702,437)<div  />
+			[117] (702,437)<img  />
+			[118] (743,524)<div  />
+		[119] (703,604)<div  />
+			[120] (654,593)<div  />
+				[121] (653,593)<img  />
+			[122] (703,642)<span >720/200pcs eyelash Extension Kit Fluffy Eyelash Extension kit with Lash Bond and Seal Lash Tweezers Thick Lash Clusters Wispy />
+		[123] (703,642)<div  />
+			[124] (663,642)<div  />
+			[125] (705,642)<span >(
+10000+
+) />
+		[126] (703,676)<div  />
+			[127] (658,676)<div  />
+				[128] (644,676)<span >$ />
+				[129] (652,676)<span >0 />
+				[130] (665,676)<span >.
+99 />
+		[131] (703,711)<div  />
+			[132] (664,711)<div  />
+				[133] (664,711)<span >Save $4.85 />
+		[134] (703,739)<div  />
+			[135] (662,739)<span >Free returns />
+	[136] (838,528)<a class='recommend-card-pc--recommend-card--1uJrWhP aliexpress--recommend-card--2g1CFNi' href='https://www.aliexpress.com/item/1005009753118830.html?afTraceInfo=1005009753118830__unknown__afStaticPage__UbAuq2g__1770712427255' />
+		[137] (838,437)<div  />
+			[138] (838,437)<img  />
+			[139] (879,524)<div  />
+		[140] (838,604)<div >5 Ports USB C PD Charger Quick Charge 3.0 Type C USB Phone Chargers Fast Charging Adapter For iPhone 16 15 Samsung Xiaomi Huawei />
+			[141] (790,593)<div  />
+				[142] (789,593)<img  />
+			5 Ports USB C PD Charger Quick Charge 3.0 Type C USB Phone Chargers Fast Charging Adapter For iPhone 16 15 Samsung Xiaomi Huawei
+		[143] (838,642)<div  />
+			[144] (799,642)<div  />
+			[145] (840,642)<span >(
+50000+
+) />
+		[146] (838,676)<div  />
+			[147] (793,676)<div  />
+				[148] (780,676)<span >$ />
+				[149] (788,676)<span >0 />
+				[150] (801,676)<span >.
+99 />
+		[151] (838,711)<div  />
+			[152] (799,711)<div  />
+				[153] (799,711)<span >Save $5.21 />
+		[154] (838,739)<div  />
+			[155] (798,739)<span >Free returns />
+	[156] (161,993)<a class='recommend-card-pc--recommend-card--1uJrWhP aliexpress--recommend-card--2g1CFNi' href='https://www.aliexpress.com/item/1005005562814968.html?afTraceInfo=1005005562814968__unknown__afStaticPage__GspQZ9E__1770712427255' />
+		[157] (161,902)<div  />
+			[158] (161,902)<img  />
+			[159] (202,988)<div  />
+	[160] (297,994)<a class='recommend-card-pc--recommend-card--1uJrWhP aliexpress--recommend-card--2g1CFNi' href='https://www.aliexpress.com/item/1005009887072524.html?afTraceInfo=1005009887072524__unknown__afStaticPage__ksLsX9z__1770712427256' />
+		[161] (296,902)<div  />
+			[162] (296,902)<img  />
+			[163] (337,988)<div  />
+	[164] (432,993)<a class='recommend-card-pc--recommend-card--1uJrWhP aliexpress--recommend-card--2g1CFNi' href='https://www.aliexpress.com/item/1005009550817879.html?afTraceInfo=1005009550817879__unknown__afStaticPage__zR5EYu0__1770712427256' />
+		[165] (432,902)<div  />
+			[166] (432,902)<img  />
+			[167] (473,988)<div  />
+	[168] (568,993)<a class='recommend-card-pc--recommend-card--1uJrWhP aliexpress--recommend-card--2g1CFNi' href='https://www.aliexpress.com/item/1005006741057783.html?afTraceInfo=1005006741057783__unknown__afStaticPage__zjF0tIl__1770712427256' />
+		[169] (567,902)<div  />
+			[170] (567,902)<img  />
+			[171] (608,988)<div  />
+
+</current_dom>

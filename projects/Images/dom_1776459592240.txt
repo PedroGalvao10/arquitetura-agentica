@@ -1,0 +1,152 @@
+<current_dom_explanation>
+This is a temporary snapshot of the current page's DOM structure. The DOM will change if you navigate to or interact with another page. Use a tool like browser_get_dom to capture and preserve the DOM in your trajectory if needed for later reference.
+</current_dom_explanation>
+<current_dom>
+Ir para o conteúdo principal
+Ajuda sobre acessibilidade
+Feedback de acessibilidade
+[0] (65,73)<a aria-label='Ir para a página inicial do Google' href='https://www.google.com/webhp?hl=pt-BR&sa=X&ved=0ahUKEwj6raHV4_WTAxVUErkGHUe-OOQQPAgJ' id='logo' title='Ir para a página inicial do Google' />
+[1] (339,71)<textarea aria-label='Pesquisar' class='gLFyf' id='APjFqb' role='combobox' />
+[2] (557,71)<div  />
+	[3] (556,71)<div aria-label='Limpar' class='vOY7J M2vV3' role='button' />
+		[4] (556,71)<span  />
+	[5] (572,71)<span  />
+[6] (588,71)<div aria-label='Ferramentas de inserção de texto' class='Umvnrc' role='button' />
+	[7] (588,71)<span  />
+[8] (614,71)<div aria-label='Pesquisar por voz' class='XDyW0e' role='button' />
+[9] (640,71)<div aria-label='Pesquisa por imagem' class='nDcEnd' role='button' />
+[10] (670,71)<button aria-label='Pesquisar' class='HZVG1b Tg7LZd' />
+	[11] (665,71)<div  />
+		[12] (665,71)<span  />
+[13] (868,71)<div aria-label='Configurações' class='fLciMb' id='og-te' role='button' />
+[14] (898,71)<a aria-label='Google Apps' class='gb_C' href='https://www.google.com.br/intl/pt-BR/about/products?tab=wh' role='button' />
+[15] (947,71)<a aria-label='Fazer login' class='gb_A' href='https://accounts.google.com/ServiceLogin?hl=pt-BR&passive=true&continue=https://www.google.com/search%3Fq%3D0180070e19044cb283946bc9188a8e10%2BStitch&ec=futura_srp_og_si_72236_p' />
+	[16] (947,70)<span >Fazer login />
+[17] (154,156)<a class='XVMlrc C6AK7c' href='/search?q=0180070e19044cb283946bc9188a8e10+Stitch&sca_esv=d4c24c2b28f31460&udm=50&fbs=ADc_l-acAb_3MMOAUx0zmbUpgBqRiigBgL2I_pgQa-94zvB056b93wKmVeAAORa3GINFZT67RHmD8tBnhEcNAi-9cSkygcRso6EAAP-mMgzrvRvFk75fIirsflf9Okb6wCXp9ga4ksDb_3ShbH0xMR8n9MkrSSs5ll8MLql_FySNjLK9GgDsKyac_xjBNB-iI8LvE7ee8gukj6IEy3n-GB_QDKzquYRCWg&aep=1&ntc=1&sa=X&ved=2ahUKEwj6raHV4_WTAxVUErkGHUe-OOQQ2J8OegQIDhAI' />
+	[18] (154,156)<div  />
+		[19] (154,168)<div  />
+			[20] (154,161)<span >Modo IA />
+[21] (197,156)<a class='C6AK7c' role='link' />
+	Tudo
+[22] (240,156)<a class='C6AK7c' href='/search?sca_esv=d4c24c2b28f31460&udm=2&fbs=ADc_l-acAb_3MMOAUx0zmbUpgBqRiigBgL2I_pgQa-94zvB056b93wKmVeAAORa3GINFZT67RHmD8tBnhEcNAi-9cSkygcRso6EAAP-mMgzrvRvFk75fIirsflf9Okb6wCXp9ga4ksDb_3ShbH0xMR8n9MkrSSs5ll8MLql_FySNjLK9GgDsKyac_xjBNB-iI8LvE7ee8gukj6IEy3n-GB_QDKzquYRCWg&q=0180070e19044cb283946bc9188a8e10+Stitch&sa=X&ved=2ahUKEwj6raHV4_WTAxVUErkGHUe-OOQQtKgLegQIExAB' />
+	[23] (240,156)<div  />
+		[24] (240,168)<span >Imagens />
+[25] (292,156)<a class='C6AK7c' href='/search?sca_esv=d4c24c2b28f31460&udm=28&fbs=ADc_l-acAb_3MMOAUx0zmbUpgBqRiigBgL2I_pgQa-94zvB056b93wKmVeAAORa3GINFZT67RHmD8tBnhEcNAi-9cSkygcRso6EAAP-mMgzrvRvFk75fIirsflf9Okb6wCXp9ga4ksDb_3ShbH0xMR8n9MkrSSs5ll8MLql_FySNjLK9GgDsKyac_xjBNB-iI8LvE7ee8gukj6IEy3n-GB_QDKzquYRCWg&q=0180070e19044cb283946bc9188a8e10+Stitch&ved=1t:220175&ictx=111' />
+	[26] (292,156)<div  />
+		[27] (292,168)<span >Shopping />
+[28] (342,156)<a class='C6AK7c' href='/search?sca_esv=d4c24c2b28f31460&udm=7&fbs=ADc_l-acAb_3MMOAUx0zmbUpgBqRiigBgL2I_pgQa-94zvB056b93wKmVeAAORa3GINFZT67RHmD8tBnhEcNAi-9cSkygcRso6EAAP-mMgzrvRvFk75fIirsflf9Okb6wCXp9ga4ksDb_3ShbH0xMR8n9MkrSSs5ll8MLql_FySNjLK9GgDsKyac_xjBNB-iI8LvE7ee8gukj6IEy3n-GB_QDKzquYRCWg&q=0180070e19044cb283946bc9188a8e10+Stitch&sa=X&ved=2ahUKEwj6raHV4_WTAxVUErkGHUe-OOQQtKgLegQIERAB' />
+	[29] (342,156)<div  />
+		[30] (342,168)<span >Vídeos />
+[31] (388,156)<a class='C6AK7c' href='/search?sca_esv=d4c24c2b28f31460&q=0180070e19044cb283946bc9188a8e10+Stitch&tbm=nws&source=lnms&fbs=ADc_l-acAb_3MMOAUx0zmbUpgBqRiigBgL2I_pgQa-94zvB056b93wKmVeAAORa3GINFZT67RHmD8tBnhEcNAi-9cSkygcRso6EAAP-mMgzrvRvFk75fIirsflf9Okb6wCXp9ga4ksDb_3ShbH0xMR8n9MkrSSs5ll8MLql_FySNjLK9GgDsKyac_xjBNB-iI8LvE7ee8gukj6IEy3n-GB_QDKzquYRCWg&sa=X&ved=2ahUKEwj6raHV4_WTAxVUErkGHUe-OOQQ0pQJegQIFRAB' />
+	[32] (388,156)<div  />
+		[33] (388,168)<span >Notícias />
+[34] (448,156)<a class='C6AK7c' href='/search?sca_esv=d4c24c2b28f31460&udm=39&fbs=ADc_l-acAb_3MMOAUx0zmbUpgBqRiigBgL2I_pgQa-94zvB056b93wKmVeAAORa3GINFZT67RHmD8tBnhEcNAi-9cSkygcRso6EAAP-mMgzrvRvFk75fIirsflf9Okb6wCXp9ga4ksDb_3ShbH0xMR8n9MkrSSs5ll8MLql_FySNjLK9GgDsKyac_xjBNB-iI8LvE7ee8gukj6IEy3n-GB_QDKzquYRCWg&q=0180070e19044cb283946bc9188a8e10+Stitch&sa=X&ved=2ahUKEwj6raHV4_WTAxVUErkGHUe-OOQQs6gLegQIEBAB' />
+	[35] (448,156)<div  />
+		[36] (448,168)<span >Vídeos curtos />
+[37] (507,156)<div class='mTpL7c' role='button' />
+	[38] (507,156)<div  />
+		[39] (507,168)<div  />
+			[40] (501,161)<span >Mais />
+			[41] (516,161)<span  />
+Resultados da pesquisa
+Imagens
+[42] (203,467)<div  />
+	[43] (203,467)<div  />
+		[44] (203,467)<div  />
+			[45] (203,467)<div  />
+				[46] (203,433)<div  />
+					[47] (203,433)<div class='kwICDb DfMusf xZGX9 y9pG6d sgQpB T3Fozb' role='button' />
+						[48] (203,433)<div  />
+							[49] (203,433)<img  />
+				Lilo e Stitch | As Melhores Travessuras do Stitch!
+				YouTube
+				[50] (265,616)<div  />
+					[51] (267,616)<div  />
+						[52] (267,616)<div aria-label='Sobre este resultado' class='mzNRm iTPLzd rNSxBe eY4mx lUn2nc' role='button' />
+							[53] (265,616)<span  />
+								[54] (265,616)<span  />
+[55] (349,467)<div  />
+	[56] (349,467)<div  />
+		[57] (349,467)<div  />
+			[58] (349,467)<div  />
+				[59] (349,433)<div  />
+					[60] (349,433)<div class='kwICDb DfMusf xZGX9 y9pG6d sgQpB T3Fozb' role='button' />
+						[61] (349,433)<div  />
+							[62] (349,433)<img  />
+				TUDO Sobre a Evolução do STITCH! (2002-2025)
+				YouTube
+				[63] (410,616)<div  />
+					[64] (413,616)<div  />
+						[65] (413,616)<div aria-label='Sobre este resultado' class='mzNRm iTPLzd rNSxBe eY4mx lUn2nc' role='button' />
+							[66] (410,616)<span  />
+								[67] (410,616)<span  />
+[68] (495,467)<div  />
+	[69] (495,467)<div  />
+		[70] (495,467)<div  />
+			[71] (495,467)<div  />
+				[72] (495,433)<div  />
+					[73] (495,433)<div class='kwICDb DfMusf xZGX9 y9pG6d sgQpB T3Fozb' role='button' />
+						[74] (495,433)<div  />
+							[75] (495,433)<img  />
+				AFINAL O QUE É STITCH, ESSE BICHO AZUL?
+				YouTube
+				[76] (556,616)<div  />
+					[77] (559,616)<div  />
+						[78] (559,616)<div aria-label='Sobre este resultado' class='mzNRm iTPLzd rNSxBe eY4mx lUn2nc' role='button' />
+							[79] (556,616)<span  />
+								[80] (556,616)<span  />
+[81] (349,693)<div class='p8FEIf MmMIvd jRKCUd' role='button' />
+	[82] (349,693)<div  />
+		[83] (343,693)<span  />
+			[84] (340,693)<span >Mostrar mais imagens />
+		[85] (397,693)<span  />
+Outras pessoas pesquisaram
+[86] (240,868)<a class='ngTNl ggLgoc' href='/search?sca_esv=d4c24c2b28f31460&q=Lilo+%26+Stitch+em+portugu%C3%AAs&sa=X&ved=2ahUKEwj6raHV4_WTAxVUErkGHUe-OOQQ1QJ6BAgWEAE' />
+	[87] (240,868)<div  />
+		[88] (226,868)<div  />
+			[89] (226,868)<div  />
+				[90] (231,868)<div  />
+					[91] (212,868)<div  />
+						[92] (212,868)<span >Stitch />
+							[93] (162,868)<b >Lilo & />
+							[94] (243,868)<b >em português />
+		[95] (330,868)<div  />
+			[96] (327,868)<div  />
+				[97] (328,868)<span  />
+[98] (240,951)<a class='ngTNl ggLgoc' href='/search?sca_esv=d4c24c2b28f31460&q=Lilo+e+Stitch+Trailer+Portugu%C3%AAs&sa=X&ved=2ahUKEwj6raHV4_WTAxVUErkGHUe-OOQQ1QJ6BAgcEAE' />
+	[99] (240,951)<div  />
+		[100] (226,951)<div  />
+			[101] (226,951)<div  />
+				[102] (231,951)<div  />
+					[103] (220,951)<div  />
+						[104] (220,951)<span >Stitch />
+							[105] (161,950)<b >Lilo e />
+							[106] (249,950)<b >Trailer Português />
+		[107] (330,951)<div  />
+			[108] (327,951)<div  />
+				[109] (328,951)<span  />
+[110] (458,868)<a class='ngTNl ggLgoc' href='/search?sca_esv=d4c24c2b28f31460&q=Stitch+desenho+infantil&sa=X&ved=2ahUKEwj6raHV4_WTAxVUErkGHUe-OOQQ1QJ6BAgaEAE' />
+	[111] (458,868)<div  />
+		[112] (444,868)<div  />
+			[113] (444,868)<div  />
+				[114] (449,868)<div  />
+					[115] (419,868)<div  />
+						[116] (419,868)<span >Stitch />
+							[117] (434,868)<b >desenho infantil />
+		[118] (547,868)<div  />
+			[119] (545,868)<div  />
+				[120] (545,868)<span  />
+[121] (458,951)<a class='ngTNl ggLgoc' href='/search?sca_esv=d4c24c2b28f31460&q=Filme+do+Stitch+1&sa=X&ved=2ahUKEwj6raHV4_WTAxVUErkGHUe-OOQQ1QJ6BAgZEAE' />
+	[122] (458,951)<div  />
+		[123] (444,951)<div  />
+			[124] (444,951)<div  />
+				[125] (449,951)<div  />
+					[126] (405,951)<div  />
+						[127] (405,951)<span >Stitch />
+							[128] (386,950)<b >Filme do />
+							[129] (442,950)<b >1 />
+		[130] (547,951)<div  />
+			[131] (545,951)<div  />
+				[132] (545,951)<span  />
+
+</current_dom>
