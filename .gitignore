@@ -1,0 +1,22 @@
+# Sensitive info
+.env
+*.key
+*.token
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+env/
+venv/
+.venv/
+
+# AI Logs and Temp
+scratch/
+*.log
+*.tmp
+*.bkp_*
+
+# OS files
+.DS_Store
+Thumbs.db

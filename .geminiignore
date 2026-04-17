@@ -1,0 +1,64 @@
+# --- PESADOS & DESNECESSÁRIOS ---
+node_modules/
+.next/
+.nuxt/
+.svelte-kit/
+dist/
+build/
+out/
+.cache/
+.vercel/
+.turbo/
+
+# --- ARQUIVOS DE LOCK (Gigantes e irrelevantes para lógica) ---
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+bun.lockb
+
+# --- ASSETS & BINÁRIOS ---
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.svg
+*.ico
+*.mp4
+*.webm
+*.pdf
+*.zip
+*.tar.gz
+*.woff
+*.woff2
+*.ttf
+*.otf
+
+# --- LOGS & DIAGNÓSTICOS ---
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+coverage/
+.clinic/
+
+# --- DADOS SENSÍVEIS (Segurança e Economia) ---
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+certs/
+
+# --- CONFIGURAÇÕES DE IDE E SO ---
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.sublime-project
+*.sublime-workspace
+
+# --- BANCO DE DADOS ---
+*.sql
+*.sqlite
+supabase/.temp/
