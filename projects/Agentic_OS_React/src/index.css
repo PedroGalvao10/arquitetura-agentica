@@ -7,6 +7,20 @@
   --animate-fourth: moveHorizontal 40s ease infinite;
   --animate-fifth: moveInCircle 20s ease infinite;
 
+  --animate-blink: blink 0.8s step-end infinite;
+  --animate-fade-down: fadeDown 1.5s ease-in-out infinite;
+
+  @keyframes blink {
+    from, to { opacity: 1; }
+    50% { opacity: 0; }
+  }
+
+  @keyframes fadeDown {
+    0% { opacity: 0; transform: translateY(-10px) rotate(45deg); }
+    50% { opacity: 1; }
+    100% { opacity: 0; transform: translateY(10px) rotate(45deg); }
+  }
+
   @keyframes moveHorizontal {
     0% { transform: origin(center center) scale(1) translate(-50%, -50%); }
     50% { transform: origin(right bottom) scale(1.5) translate(50%, 50%); }

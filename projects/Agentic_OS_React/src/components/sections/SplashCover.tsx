@@ -24,16 +24,15 @@ export function SplashCover() {
 
   return (
     <section
-      className="relative w-full h-[100vh] flex flex-col items-center justify-center overflow-hidden z-[100]"
+      className="relative w-full h-screen flex flex-col items-center justify-center overflow-hidden z-[100]"
     >
       <StarsBackground />
       
-      <div style={{
-        position: "absolute", inset: 0, zIndex: 1,
-        background: "radial-gradient(circle at 50% 50%, rgba(124,58,237,0.1) 0%, transparent 80%)"
-      }}/>
+      {/* Glow Effect */}
+      <div className="absolute inset-0 z-1 bg-[radial-gradient(circle_at_50%_50%,rgba(124,58,237,0.1)_0%,transparent_80%)]" />
 
-      <div style={{ position: "relative", zIndex: 10, width: "100%", height: "55vh" }}>
+      {/* Hero Typography Container */}
+      <div className="relative z-10 w-full h-[55vh]">
         <CursorDrivenParticleTypography
           text="Agentic OS"
           fontSize={140}
@@ -47,43 +46,25 @@ export function SplashCover() {
         />
       </div>
 
-      <div style={{
-        position: "relative", zIndex: 10, marginTop: "-2vh",
-        fontFamily: "'JetBrains Mono', monospace",
-        fontSize: "clamp(14px, 1.4vw, 20px)",
-        color: "#94A3B8",
-        letterSpacing: "0.05em",
-        height: "2em",
-        display: "flex", alignItems: "center"
-      }}>
+      {/* Signature & Typing Effect */}
+      <div className="relative z-10 -mt-[2vh] font-['JetBrains_Mono',_monospace] text-[clamp(14px,1.4vw,20px)] color-[#94A3B8] tracking-widest h-[2em] flex items-center">
         {typed}
         {showCursor && (
-          <span style={{
-            display: "inline-block", width: "2px", height: "1.1em",
-            background: "#7C3AED", marginLeft: "4px",
-            animation: "blink 0.8s step-end infinite"
-          }}/>
+          <span className="inline-block w-[2px] h-[1.1em] bg-[#7C3AED] ml-1 animate-blink" />
         )}
       </div>
 
-      <div style={{
-        position: "absolute", bottom: "40px", left: "50%",
-        transform: "translateX(-50%)", zIndex: 10,
-        display: "flex", flexDirection: "column", alignItems: "center", gap: "8px"
-      }}>
-        <span style={{ fontSize: "10px", letterSpacing: "0.2em",
-          textTransform: "uppercase", color: "#475569" }}>
+      {/* Scroll Indicator */}
+      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2">
+        <span className="text-[10px] tracking-[0.2em] uppercase text-[#475569]">
           scroll to enter
         </span>
         {[0, 1, 2].map((i) => (
-          <div key={i} style={{
-            width: "8px", height: "8px",
-            borderRight: "1px solid #7C3AED",
-            borderBottom: "1px solid #7C3AED",
-            transform: "rotate(45deg)", marginTop: "-4px",
-            animation: `fadeDown 1.5s ease-in-out ${i * 0.2}s infinite`,
-            opacity: 0
-          }}/>
+          <div 
+            key={i} 
+            className="w-2 h-2 border-r border-b border-[#7C3AED] -mt-1 opacity-0 animate-fade-down"
+            style={{ animationDelay: `${i * 0.2}s` }}
+          />
         ))}
       </div>
     </section>
