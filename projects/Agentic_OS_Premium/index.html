@@ -3,14 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>S.O.A.R.E.S | Agentic Operating System — Private Edition</title>
-    <meta name="description" content="Sistema Operacional Agêntico: onde a IA não apenas responde — ela executa, aprende e evolui autonomamente.">
+    <title>S.O.A.R.E.S | Agentic Operating System | Private Edition</title>
+    <meta name="description" content="Sistema Operacional Agêntico onde a IA não apenas responde ela executa, aprende e evolui autonomamente.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    
+    <!-- Three.js (WebGL) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
 </head>
 <body>
+    <!-- 3D WEBGL BACKGROUND (Replaces 2D Particles) -->
+    <div id="webgl-container"></div>
+    
     <!-- AURORA BACKGROUND -->
     <div class="aurora-container">
         <div class="aurora aurora-1"></div>
@@ -18,7 +24,7 @@
         <div class="aurora aurora-3"></div>
     </div>
     <div class="grid-overlay"></div>
-    <div class="particles-container" id="particles"></div>
+    <!-- <div class="particles-container" id="particles"></div> removed in favor of webgl -->
 
     <!-- NAVBAR -->
     <nav class="navbar" id="navbar">
@@ -50,45 +56,46 @@
     </nav>
 
     <!-- ═══════════════════════════════════════ -->
-    <!-- HERO: FULL IMMERSIVE                    -->
+    <!-- HERO: FULL IMMERSIVE (SCROLL ELEVATION v2) -->
     <!-- ═══════════════════════════════════════ -->
-    <section class="hero" id="visao">
-        <div class="hero-sticky-container">
+    <section class="scroll-jail" id="visao">
+        <div class="hero-sticky">
             <div class="hero-content">
-            <div class="hero-eyebrow reveal">
-                <span class="eyebrow-line"></span>
-                <span>SISTEMA OPERACIONAL AGÊNTICO</span>
-                <span class="eyebrow-line"></span>
-            </div>
-            <h1 class="hero-title">
-                <span class="reveal-text">O Futuro do Trabalho</span>
-                <br>
-                <span class="reveal-text delay-1">é <span class="text-gradient">Autônomo.</span></span>
-            </h1>
-            <p class="hero-subtitle reveal">
-                Eu não uso IA como um chatbot. Eu construí um ecossistema completo onde agentes autônomos
-                executam tarefas reais — do planejamento estratégico ao deploy de código — enquanto eu foco
-                no que realmente importa: pensar.
-            </p>
-            <div class="hero-cta reveal">
-                <button class="btn-primary large magnetic">Explorar a Arquitetura</button>
-                <button class="btn-ghost magnetic">Ver Demonstração</button>
-            </div>
-            <div class="scroll-indicator">
-                <div class="scroll-line"></div>
-                <span>SCROLL</span>
-            </div>
-        </div> <!-- End of hero-sticky-container -->
-        
-        <div class="hero-image-wrapper">
-            <div class="hero-image reveal">
-                <div class="hero-img-glow"></div>
-                <img src="./assets/dev_workspace.png" alt="Workspace de Desenvolvimento" class="hero-photo" loading="eager">
-                <div class="hero-image-overlay">
-                    <h2>AGENTIC OS<br><span>by Pedro Galvão</span></h2>
+                <div class="hero-eyebrow reveal">
+                    <span class="eyebrow-line"></span>
+                    <span>SISTEMA OPERACIONAL AGÊNTICO</span>
+                    <span class="eyebrow-line"></span>
+                </div>
+                <h1 class="hero-title">
+                    <span class="reveal-text">O Futuro do Trabalho</span>
+                    <br>
+                    <span class="reveal-text delay-1">é <span class="text-gradient">Autônomo.</span></span>
+                </h1>
+                <p class="hero-subtitle reveal">
+                    Eu não uso IA como um chatbot. Eu construí um ecossistema completo onde agentes autônomos
+                    executam tarefas reais do planejamento estratégico ao deploy de código enquanto eu foco
+                    no que realmente importa: pensar.
+                </p>
+                <div class="hero-cta reveal">
+                    <button class="btn-primary large magnetic">Explorar a Arquitetura</button>
+                    <button class="btn-ghost magnetic">Ver Demonstração</button>
+                </div>
+                <div class="scroll-indicator">
+                    <div class="scroll-line"></div>
+                    <span>SCROLL</span>
+                </div>
+            </div> <!-- End of hero-content -->
+            
+            <div class="flying-image">
+                <div class="hero-image">
+                    <div class="hero-img-glow"></div>
+                    <img src="./assets/dev_workspace.png" alt="Workspace de Desenvolvimento" class="hero-photo" loading="eager">
+                    <div class="hero-image-overlay">
+                        <h2>AGENTIC OS<br><span>by Pedro Galvão</span></h2>
+                    </div>
                 </div>
             </div>
-        </div>
+        </div> <!-- End of hero-sticky -->
     </section>
 
     <!-- ═══════════════════════════════════════ -->
@@ -97,15 +104,15 @@
     <section class="manifesto-section">
         <div class="manifesto-wrapper">
             <blockquote class="manifesto-text reveal-word" id="manifesto">
-                "Todo profissional que trabalha com IA hoje está no mesmo ponto que eu estava há meses — 
+                "Todo profissional que trabalha com IA hoje está no mesmo ponto que eu estava há meses, 
                 copiando e colando prompts em chats. Eu decidi ir além. Construí um sistema onde a IA 
-                não é um assistente — é um <strong>funcionário autônomo</strong> que lê documentos, 
+                não é um assistente é um <strong>funcionário autônomo</strong> que lê documentos, 
                 escreve código, testa, corrige e entrega. Sem intermediários. Sem alucinações. 
                 Sem perda de contexto."
             </blockquote>
             <div class="manifesto-author reveal">
                 <div class="author-line"></div>
-                <span>Filosofia de Design — S.O.A.R.E.S</span>
+                <span>Filosofia de Design S.O.A.R.E.S</span>
             </div>
         </div>
     </section>
@@ -116,7 +123,7 @@
     <section class="metrics-section" id="numeros">
         <div class="metrics-header">
             <h2 class="section-title reveal-text">Resultados Reais.<br>Não Promessas.</h2>
-            <p class="section-subtitle reveal">Esses números vêm do meu uso diário do sistema. Não são projeções — são dados reais de produtividade medidos ao longo de semanas de operação contínua.</p>
+            <p class="section-subtitle reveal">Esses números vêm do meu uso diário do sistema. Não são projeções são dados reais de produtividade medidos ao longo de semanas de operação contínua.</p>
         </div>
         <div class="metrics-grid">
             <div class="metric-card glass reveal">
@@ -130,7 +137,7 @@
                 <p class="metric-desc">Projetos entregues 3 vezes mais rápido com o pipeline Directive → Blueprint → Execution.</p>
             </div>
             <div class="metric-card glass reveal">
-                <span class="metric-value" data-target="47" data-suffix="">0</span>
+                <span class="metric-value" data-target="1026" data-suffix="">0</span>
                 <span class="metric-label">Skills Ativas</span>
                 <p class="metric-desc">Directivas especializadas cobrindo desde web scraping até design de interfaces premium.</p>
             </div>
@@ -164,7 +171,7 @@
                         <span class="layer-tag directive-tag">LAYER 1</span>
                         <h3>Directiva</h3>
                     </div>
-                    <p class="layer-role">O "O QUÊ" — A Intenção</p>
+                    <p class="layer-role">O "O QUÊ" Definição de Comportamento</p>
                     <p class="layer-description">
                         São as leis do sistema. SOPs (Standard Operating Procedures) escritos em Markdown,
                         vivendo dentro do meu Segundo Cérebro no Obsidian. Definem metas, inputs, ferramentas
@@ -187,10 +194,10 @@
                 <div class="layer-number">02</div>
                 <div class="layer-content">
                     <div class="layer-header">
-                        <span class="layer-tag orchestrator-tag">LAYER 2 — CORE</span>
+                        <span class="layer-tag orchestrator-tag">LAYER 2 CORE</span>
                         <h3>Orquestrador</h3>
                     </div>
-                    <p class="layer-role">O "COMO" — O Cérebro</p>
+                    <p class="layer-role">O "COMO" o Cérebro</p>
                     <p class="layer-description">
                         Sou eu. Ou melhor, é a IA operando como eu. O Orquestrador lê a directiva, analisa
                         os scripts disponíveis na Layer 3, e cria o plano de execução (Blueprint). Ele é
@@ -335,10 +342,10 @@
     <section class="skills-section" id="skills">
         <div class="skills-header">
             <span class="section-label reveal">CAPACIDADES</span>
-            <h2 class="section-title reveal-text">47 Skills.<br>Um Exército de <span class="text-gradient">Especialistas.</span></h2>
+            <h2 class="section-title reveal-text">1000+ Skills.<br>Um Exército de <span class="text-gradient">Especialistas.</span></h2>
             <p class="section-subtitle reveal">
                 Cada skill é uma directiva especializada que transforma o agente generalista em um expert de domínio.
-                É como ter 47 funcionários diferentes, cada um treinado para uma tarefa específica, disponíveis 24/7.
+                É como ter mais de mil funcionários diferentes, cada um treinado para uma tarefa específica, disponíveis 24/7.
             </p>
         </div>
         <div class="skills-grid">

@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+@theme {
+  --animate-first: moveVertical 30s ease infinite;
+  --animate-second: moveInCircle 20s reverse infinite;
+  --animate-third: moveInCircle 40s linear infinite;
+  --animate-fourth: moveHorizontal 40s ease infinite;
+  --animate-fifth: moveInCircle 20s ease infinite;
+
+  @keyframes moveHorizontal {
+    0% { transform: origin(center center) scale(1) translate(-50%, -50%); }
+    50% { transform: origin(right bottom) scale(1.5) translate(50%, 50%); }
+    100% { transform: origin(center center) scale(1) translate(-50%, -50%); }
+  }
+
+  @keyframes moveInCircle {
+    0% { transform: rotate(0deg); }
+    50% { transform: rotate(180deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  @keyframes moveVertical {
+    0% { transform: translateY(-50%); }
+    50% { transform: translateY(50%); }
+    100% { transform: translateY(-50%); }
+  }
+}
+
+@layer base {
+  :root {
+    --bg: #030305;
+    --text: #f5f5f7;
+    --radius: 20px;
+  }
+  
+  body {
+    background-color: var(--bg);
+    color: var(--text);
+  }
+  
+  .gradients-container {
+    opacity: 0.35;
+  }
+  [data-gradient-root] {
+    height: auto !important;
+    min-height: 100vh;
+  }
+}

@@ -1,76 +1,106 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     // ====================================
-    //  1. PARTICLE SYSTEM (Canvas)
+    //  1. 3D WEBGL PARTICLE CLOUD (Three.js)
     // ====================================
-    const container = document.getElementById('particles');
-    const canvas = document.createElement('canvas');
-    const ctx = canvas.getContext('2d');
-    container.appendChild(canvas);
+    const webglContainer = document.getElementById('webgl-container');
+    
+    if (webglContainer && window.THREE) {
+        let scene, camera, renderer, particles;
+        let mouseX = 0;
+        let mouseY = 0;
+        let targetX = 0;
+        let targetY = 0;
+        const windowHalfX = window.innerWidth / 2;
+        const windowHalfY = window.innerHeight / 2;
 
-    let particles = [];
-    let mouse = { x: null, y: null };
+        function init3D() {
+            scene = new THREE.Scene();
+            // Fog to fade particles in the distance
+            scene.fog = new THREE.FogExp2(0x030305, 0.001);
 
-    function resize() {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-    }
-    window.addEventListener('resize', resize);
-    resize();
+            camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 3000);
+            camera.position.z = 1000;
 
-    window.addEventListener('mousemove', (e) => {
-        mouse.x = e.x;
-        mouse.y = e.y;
-    });
+            // Geometry and multiple particle clouds
+            const geometry = new THREE.BufferGeometry();
+            const vertices = [];
+            const sizes = [];
 
-    class Particle {
-        constructor() {
-            this.reset();
-        }
-        reset() {
-            this.x = Math.random() * canvas.width;
-            this.y = Math.random() * canvas.height;
-            this.size = Math.random() * 1.5 + 0.3;
-            this.speedX = (Math.random() - 0.5) * 0.6;
-            this.speedY = (Math.random() - 0.5) * 0.6;
-            this.opacity = Math.random() * 0.15 + 0.02;
-        }
-        update() {
-            this.x += this.speedX;
-            this.y += this.speedY;
-
-            // Mouse proximity glow
-            if (mouse.x !== null) {
-                const dx = this.x - mouse.x;
-                const dy = this.y - mouse.y;
-                const dist = Math.sqrt(dx * dx + dy * dy);
-                if (dist < 150) {
-                    this.opacity = Math.min(0.4, this.opacity + 0.02);
-                } else {
-                    this.opacity = Math.max(0.02, this.opacity - 0.005);
-                }
+            // Add 1500 particles
+            for (let i = 0; i < 1500; i++) {
+                const x = (Math.random() * 2000) - 1000;
+                const y = (Math.random() * 2000) - 1000;
+                const z = (Math.random() * 2000) - 1000;
+                vertices.push(x, y, z);
+                sizes.push(Math.random() * 1.5 + 0.5);
             }
 
-            if (this.x < -10 || this.x > canvas.width + 10 || this.y < -10 || this.y > canvas.height + 10) {
-                this.reset();
-            }
-        }
-        draw() {
-            ctx.fillStyle = `rgba(110, 86, 255, ${this.opacity})`;
-            ctx.beginPath();
-            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-            ctx.fill();
-        }
-    }
+            geometry.setAttribute('position', new THREE.Float32BufferAttribute(vertices, 3));
+            geometry.setAttribute('size', new THREE.Float32BufferAttribute(sizes, 1));
 
-    for (let i = 0; i < 120; i++) particles.push(new Particle());
+            // Custom shader material for soft glowing dots
+            const material = new THREE.PointsMaterial({
+                size: 2.5,
+                color: 0x6e56ff, // Agentic Purple
+                transparent: true,
+                opacity: 0.6,
+                sizeAttenuation: true,
+                blending: THREE.AdditiveBlending
+            });
 
-    function animateParticles() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        particles.forEach(p => { p.update(); p.draw(); });
-        requestAnimationFrame(animateParticles);
+            particles = new THREE.Points(geometry, material);
+            scene.add(particles);
+
+            renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+            renderer.setPixelRatio(window.devicePixelRatio);
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            webglContainer.appendChild(renderer.domElement);
+
+            document.addEventListener('mousemove', onDocumentMouseMove, false);
+            window.addEventListener('resize', onWindowResize, false);
+        }
+
+        function onWindowResize() {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        }
+
+        function onDocumentMouseMove(event) {
+            mouseX = (event.clientX - windowHalfX) * 0.5;
+            mouseY = (event.clientY - windowHalfY) * 0.5;
+        }
+
+        function animate3D() {
+            requestAnimationFrame(animate3D);
+
+            targetX = mouseX * 0.5;
+            targetY = mouseY * 0.5;
+
+            // Mouse interaction (Orbiting)
+            camera.position.x += (targetX - camera.position.x) * 0.05;
+            camera.position.y += (-targetY - camera.position.y) * 0.05;
+
+            // Scroll Interaction (Z traverse)
+            const scrollPercent = window.scrollY / (document.body.scrollHeight - window.innerHeight);
+            // Move camera forward based on scroll
+            camera.position.z = 1000 - (scrollPercent * 800);
+
+            camera.lookAt(scene.position);
+
+            const time = Date.now() * 0.00005;
+
+            // Gentle rotation over time
+            particles.rotation.y = time * 0.5;
+            particles.rotation.x = time * 0.2;
+
+            renderer.render(scene, camera);
+        }
+
+        init3D();
+        animate3D();
     }
-    animateParticles();
 
     // ====================================
     //  2. SCROLL REVEAL (IntersectionObserver)
@@ -309,5 +339,76 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // ====================================
+    //  11. HERO SCROLL ELEVATION v2
+    // ====================================
+    const scrollJail = document.querySelector('.scroll-jail');
+    const flyingImage = document.querySelector('.flying-image');
+    
+    // Lerp state
+    const lerpState = {
+        target: 0,
+        current: 0,
+        ease: 0.1
+    };
+
+    function renderHeroV2() {
+        if (!scrollJail || !flyingImage) return;
+
+        // Current scroll target
+        lerpState.target = window.scrollY;
+        
+        // Smoothing scroll
+        lerpState.current += (lerpState.target - lerpState.current) * lerpState.ease;
+
+        const rect = scrollJail.getBoundingClientRect();
+        const jailTop = scrollJail.offsetTop;
+        const jailHeight = scrollJail.offsetHeight;
+        const viewportHeight = window.innerHeight;
+
+        // Progress calculates how far we are into the 300vh jail
+        // 0 = top of section at top of viewport
+        // 1 = bottom of section at top of viewport
+        let progress = (lerpState.current - jailTop) / (jailHeight - viewportHeight);
+        progress = Math.max(0, Math.min(1, progress));
+
+        // Interaction logic:
+        // Stage 1: Entry (Bottom -> Center) | Progress 0.0 -> 0.5
+        // Stage 2: Exit (Center -> Top)    | Progress 0.5 -> 1.0
+
+        let translateY = 120; // Default out (in vh)
+        let opacity = 0;
+        let scale = 0.8;
+
+        if (progress <= 0.5) {
+            // Mapping 0.0-0.5 to 0.0-1.0 for entry
+            const entryProgress = progress / 0.5;
+            // Ease out cubic for entry
+            const ease = 1 - Math.pow(1 - entryProgress, 3);
+            
+            translateY = 120 - (ease * 120); // 120vh -> 0vh
+            opacity = ease;
+            scale = 0.8 + (ease * 0.2); // 0.8 -> 1.0
+        } else {
+            // Mapping 0.5-1.0 to 0.0-1.0 for exit
+            const exitProgress = (progress - 0.5) / 0.5;
+            // Ease in cubic for exit
+            const ease = Math.pow(exitProgress, 3);
+
+            translateY = 0 - (ease * 120); // 0vh -> -120vh
+            opacity = 1 - ease;
+            scale = 1.0 + (ease * 0.1); // 1.0 -> 1.1 (subtle growth)
+        }
+
+        // Apply transformations
+        flyingImage.style.transform = `translateX(-50%) translateY(${translateY}vh) scale(${scale})`;
+        flyingImage.style.opacity = opacity;
+
+        requestAnimationFrame(renderHeroV2);
+    }
+
+    // Initialize the loop
+    if (scrollJail) requestAnimationFrame(renderHeroV2);
 
 });

@@ -32,6 +32,7 @@
 ### CATEGORIA: MARKETING & VISIBILIDADE
 - seo: Auditoria técnica, on-page, schema markup e prontidão para IA (GEO).
 - copywriting: Escrita persuasiva e conversão para páginas de vendas e landing pages.
+- humanizacao-texto: Protocolo de remoção de tics de IA (traços/travessões) para escrita fluida, humana e natural.
 - content-strategy: Planejamento estratégico de conteúdo buscável e compartilhável.
 - ai-product-photography: Geração de fotografia de produto profissional via IA.
 - ai-marketing-videos: Criação de vídeos promocionais e anúncios de marketing via IA.

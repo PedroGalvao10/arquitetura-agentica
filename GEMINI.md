@@ -157,3 +157,8 @@ Treat frontend development like building a well-proportioned structure. Before w
 * **AÇÃO:** Uma vez que um **Blueprint** for aprovado pelo usuário, você tem permissão para executar comandos sequenciais no terminal (instalações, criação de arquivos, testes) de forma autônoma, utilizando a flag `SafeToAutoRun: true` para operações não-destrutivas.
 * **RESTRIÇÃO:** **NÃO** utilize ou consulte o notebook `ConstitucionAI` (ID: f9276965-274b-4b08-a172-16bf8a9705ac). Foque apenas nos notebooks de Business, Inovação e Tecnologia.
 * **EFICIÊNCIA:** Minimize as confirmações desnecessárias. Avance nos passos técnicos do Blueprint de forma contínua até encontrar um erro impeditivo ou concluir o marco.
+
+**22. Sincronização Obrigatória (GitHub & Duplicado):**
+
+* **AÇÃO:** Ao finalizar qualquer tarefa significativa ou marco de evolução, você DEVE executar os scripts `c:\Users\soare\.gemini\antigravity\scratch\execution\sync_duplicado.ps1` e `c:\Users\soare\.gemini\antigravity\scratch\execution\github_sync.ps1`.
+* **OBJETIVO:** Garantir que as diretivas, códigos e o "Segundo Cérebro" (Obsidian) estejam sempre espelhados e versionados no GitHub e na pasta Duplicado.
