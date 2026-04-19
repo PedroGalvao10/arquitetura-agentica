@@ -20,3 +20,10 @@ scratch/
 # OS files
 .DS_Store
 Thumbs.db
+
+# Sites (Excluídos do Agentic OS Repo)
+site_mariana_react/
+mariana-bermudes-site/
+*.mp4
+*.lnk
+knowledge_base/*.mp4

@@ -129,12 +129,12 @@ Treat frontend development like building a well-proportioned structure. Before w
 
 **16. Protocolo de Contexto Inicial (Mandatório):**
 
-* **AÇÃO:** Antes de responder a qualquer nova tarefa complexa, você DEVE verificar se existe um arquivo relevante na pasta `C:\Users\soare\Desktop\Segundo_Cerebro_IA\Context_Maps`.
+* **AÇÃO:** Antes de responder a qualquer nova tarefa complexa, você DEVE verificar se existe um arquivo relevante na pasta `c:\Users\soare\.gemini\antigravity\scratch\brain\Context_Maps`.
 * **OBJETIVO:** Garantir que caminhos de arquivos, decisões técnicas anteriores e especificidades do ambiente Windows sejam respeitados.
 
 **17. Ciclo de Vida de Blueprint (Planejamento Primeiro):**
 
-* **AÇÃO:** Para qualquer tarefa que envolva mais de 3 passos ou criação de novos sistemas, você DEVE gerar ou atualizar um Blueprint em `C:\Users\soare\Desktop\Segundo_Cerebro_IA\Blueprints`.
+* **AÇÃO:** Para qualquer tarefa que envolva mais de 3 passos ou criação de novos sistemas, você DEVE gerar ou atualizar um Blueprint em `c:\Users\soare\.gemini\antigravity\scratch\brain\Blueprints`.
 * **BLOQUEIO:** Não escreva código final (Layer 3) antes de apresentar o Blueprint e receber um "Aprovado".
 
 **18. Auto-Documentação e Registro de Log:**

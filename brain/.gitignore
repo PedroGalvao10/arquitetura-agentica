@@ -1,0 +1,9 @@
+# Obsidian system files
+.obsidian/workspace
+.obsidian/workspace.json
+.obsidian/cache/
+.trash/
+
+# OS files
+.DS_Store
+Thumbs.db

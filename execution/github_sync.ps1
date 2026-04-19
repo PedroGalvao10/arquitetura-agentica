@@ -6,8 +6,7 @@
 
 $date = Get-Date -Format "yyyy-MM-dd HH:mm"
 $paths = @(
-    "c:\Users\soare\.gemini\antigravity\scratch",
-    "C:\Users\soare\Desktop\Segundo_Cerebro_IA"
+    "c:\Users\soare\.gemini\antigravity\scratch"
 )
 
 Write-Host "`n[GisHub Sync] Iniciando sincronizacao..." -ForegroundColor Cyan
