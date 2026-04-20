@@ -57,13 +57,17 @@ export function AppleRevealText({
       className={cn("inline-flex flex-wrap", className)}
     >
       {words.map((word, index) => (
-        <motion.span
-          variants={childVariants}
-          className="mr-[0.35em] inline-block"
-          key={`${word}-${index}`}
-        >
-          {word}
-        </motion.span>
+        <span key={`${word}-${index}`} className="inline-flex">
+          <motion.span
+            variants={childVariants}
+            className="inline-block"
+          >
+            {word}
+          </motion.span>
+          {index < words.length - 1 && (
+            <span className="inline-block">&nbsp;</span>
+          )}
+        </span>
       ))}
     </motion.span>
   );

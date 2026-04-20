@@ -177,8 +177,7 @@ export function AgenticWorkflowBlock() {
       {/* Canvas */}
       <div
         ref={canvasRef}
-        className="relative h-full w-full bg-black flex items-center justify-center p-20"
-        style={{ minHeight: "400px" }}
+        className="relative h-full w-full min-h-[400px] bg-black flex items-center justify-center p-20"
         role="region"
         aria-label="Workflow canvas"
         tabIndex={0}
@@ -193,10 +192,9 @@ export function AgenticWorkflowBlock() {
         >
           {/* SVG Connections */}
           <svg
-            className="absolute top-0 left-0 pointer-events-none"
+            className="absolute top-0 left-0 pointer-events-none overflow-visible"
             width={contentSize.width}
             height={contentSize.height}
-            style={{ overflow: "visible" }}
             aria-hidden="true"
           >
             {connections.map((c) => (

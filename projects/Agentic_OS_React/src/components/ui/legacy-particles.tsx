@@ -108,12 +108,13 @@ export function LegacyWebGLParticles() {
     init3D();
     animate3D();
 
+    const mount = mountRef.current;
     return () => {
       window.removeEventListener("resize", onWindowResize);
       document.removeEventListener("mousemove", onDocumentMouseMove);
       cancelAnimationFrame(animationId);
-      if (mountRef.current && renderer.domElement) {
-        mountRef.current.removeChild(renderer.domElement);
+      if (mount && renderer.domElement) {
+        mount.removeChild(renderer.domElement);
       }
       renderer.dispose();
       scene.clear();

@@ -37,7 +37,9 @@ export function AgenticImageCarousel({
   images = defaultImages,
 }: ImageCarouselHeroProps) {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
-  const [rotatingCards, setRotatingCards] = useState<number[]>([])
+  const [rotatingCards, setRotatingCards] = useState<number[]>(() => 
+    images.map((_, i) => i * (360 / images.length))
+  )
 
   // Continuous rotation animation
   useEffect(() => {
@@ -48,10 +50,7 @@ export function AgenticImageCarousel({
     return () => clearInterval(interval)
   }, [])
 
-  // Initialize rotating cards
-  useEffect(() => {
-    setRotatingCards(images.map((_, i) => i * (360 / images.length)))
-  }, [images.length])
+
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     const rect = e.currentTarget.getBoundingClientRect()
@@ -81,7 +80,7 @@ export function AgenticImageCarousel({
           </div>
 
           {/* Rotating Image Cards */}
-          <div className="absolute inset-0 flex items-center justify-center z-10" style={{ perspective: "1500px" }}>
+          <div className="absolute inset-0 flex items-center justify-center z-10 [perspective:1500px]">
             {images.map((image, index) => {
               const angle = (rotatingCards[index] || 0) * (Math.PI / 180)
               const radius = 220
@@ -110,11 +109,8 @@ export function AgenticImageCarousel({
                     className={cn(
                       "relative w-full h-full rounded-2xl overflow-hidden shadow-2xl",
                       "transition-all duration-300 hover:shadow-[0_0_30px_rgba(139,92,246,0.5)] hover:scale-110",
-                      "cursor-pointer group border border-white/10",
+                      "cursor-pointer group border border-white/10 [transform-style:preserve-3d]",
                     )}
-                    style={{
-                      transformStyle: "preserve-3d",
-                    }}
                   >
                     <img
                       src={image.src}

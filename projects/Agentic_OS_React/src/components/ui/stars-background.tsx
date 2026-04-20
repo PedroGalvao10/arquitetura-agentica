@@ -18,7 +18,7 @@ export function StarsBackground() {
 
     let animationFrameId: number;
     let stars: { x: number; y: number; z: number; size: number; opacity: number; color: string }[] = [];
-    const starCount = 2400;
+    const starCount = 400;
     
     let width = window.innerWidth;
     let height = window.innerHeight;
@@ -135,8 +135,7 @@ export function StarsBackground() {
   return (
     <canvas
       ref={canvasRef}
-      className="absolute inset-0 w-full h-full pointer-events-none"
-      style={{ background: "#08080F" }}
+      className="absolute inset-0 w-full h-full pointer-events-none bg-[#08080F]"
     />
   );
 }

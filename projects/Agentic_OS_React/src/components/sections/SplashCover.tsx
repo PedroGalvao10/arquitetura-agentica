@@ -47,7 +47,7 @@ export function SplashCover() {
       </div>
 
       {/* Signature & Typing Effect */}
-      <div className="relative z-10 -mt-[2vh] font-['JetBrains_Mono',_monospace] text-[clamp(14px,1.4vw,20px)] color-[#94A3B8] tracking-widest h-[2em] flex items-center">
+      <div className="relative z-10 -mt-[2vh] font-['JetBrains_Mono',_monospace] text-[clamp(14px,1.4vw,20px)] text-[#94A3B8] tracking-widest h-[2em] flex items-center">
         {typed}
         {showCursor && (
           <span className="inline-block w-[2px] h-[1.1em] bg-[#7C3AED] ml-1 animate-blink" />
@@ -62,8 +62,7 @@ export function SplashCover() {
         {[0, 1, 2].map((i) => (
           <div 
             key={i} 
-            className="w-2 h-2 border-r border-b border-[#7C3AED] -mt-1 opacity-0 animate-fade-down"
-            style={{ animationDelay: `${i * 0.2}s` }}
+            className={`w-2 h-2 border-r border-b border-[#7C3AED] -mt-1 opacity-0 animate-fade-down ${i === 0 ? '' : i === 1 ? 'delay-200' : 'delay-[400ms]'}`}
           />
         ))}
       </div>

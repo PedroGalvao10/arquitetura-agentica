@@ -20,7 +20,7 @@ export function TubesBackground({
   enableClickInteraction = true,
 }: TubesBackgroundProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const tubesRef = useRef<any>(null);
+  const tubesRef = useRef<Record<string, unknown> | null>(null);
 
   useEffect(() => {
     let mounted = true;

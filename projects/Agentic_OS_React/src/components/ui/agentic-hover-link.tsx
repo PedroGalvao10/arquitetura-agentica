@@ -107,11 +107,16 @@ export const AgenticHoverProvider = ({ children }: { children: React.ReactNode }
   const [isVisible, setIsVisible] = useState(false);
   const cardRef = useRef<HTMLDivElement>(null);
 
+  // Otimização: Carregamento sob demanda em vez de preloade imediato de tudo
   useEffect(() => {
-    Object.values(agenticPreviewData).forEach((data) => {
-      const img = new Image();
-      img.crossOrigin = "anonymous";
-      img.src = data.image;
+    // Pré-carrega apenas as 3 principais imagens da dobra inicial
+    const priorityKeys = ['agentic_os', 'ceo', 'workforce'];
+    priorityKeys.forEach((key) => {
+      const data = agenticPreviewData[key];
+      if (data) {
+        const img = new Image();
+        img.src = data.image;
+      }
     });
   }, []);
 
@@ -139,7 +144,7 @@ export const AgenticHoverProvider = ({ children }: { children: React.ReactNode }
 
   const handleHoverStart = useCallback(
     (key: string, e: React.MouseEvent) => {
-      const data = (agenticPreviewData as any)[key];
+      const data = agenticPreviewData[key as keyof typeof agenticPreviewData];
       if (data) {
         setActivePreview(data);
         setIsVisible(true);
