@@ -31,7 +31,7 @@ export function SplineScene({ scene, className }: SplineSceneProps) {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting && !cancelled) {
-          // Espera 3s após ficar visível
+          // Espera 800ms após ficar visível (mais rápido que 3s)
           const timer = setTimeout(() => {
             if (cancelled) return
             // Usa requestIdleCallback para não competir com animações
@@ -42,7 +42,7 @@ export function SplineScene({ scene, className }: SplineSceneProps) {
             } else {
               setShouldLoad(true)
             }
-          }, 3000)
+          }, 800)
 
           return () => clearTimeout(timer)
         }

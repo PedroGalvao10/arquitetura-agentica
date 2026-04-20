@@ -1,6 +1,5 @@
 import { useEffect } from 'react';
 import { initLegacyScripts } from '@/lib/legacy-scripts';
-import { LegacyWebGLParticles } from '@/components/ui/legacy-particles';
 import { AgenticHoverLink } from '@/components/ui/agentic-hover-link';
 import { AppleRevealText, LetterTypewriter } from '@/components/ui/apple-reveal-text';
 import { SplineScene } from '@/components/ui/spline-scene';
@@ -19,8 +18,7 @@ export function LandingPage() {
 
   return (
     <div className="relative z-10 w-full text-white font-sans overflow-x-hidden">
-      {/* PARTICLES LEGADO (ThreeJs) */}
-      <LegacyWebGLParticles />
+      {/* PARTICLES LEGADO (REMOVIDO PARA OTIMIZAÇÃO - MANTIDO NO APP.TSX) */}
 
     <motion.div style={{ y: yParallax, scale: scaleParallax }} className="aurora-container pointer-events-none">
         <div className="aurora aurora-1"></div>
@@ -32,33 +30,7 @@ export function LandingPage() {
 
 
     
-    <nav className="navbar" id="navbar">
-        <div className="nav-content">
-            <div className="logo">
-                <div className="logo-icon">
-                    <div className="logo-pulse"></div>
-                </div>
-                <span className="logo-text">AGENTIC OS</span>
-                <span className="badge">V4.0 PRIVATE</span>
-            </div>
-            <div className="nav-links">
-                <a href="#visao">Visão</a>
-                <a href="#numeros">Métricas</a>
-                <a href="#fluxo">Arquitetura</a>
-                <a href="#motor">Motor Híbrido</a>
-                <a href="#skills">Skills</a>
-                <a href="#cerebro">Cérebro</a>
-                <a href="#evolucao">Evolução</a>
-            </div>
-            <div className="nav-actions">
-                <div className="status-indicator">
-                    <span className="status-dot"></span>
-                    <span>ONLINE</span>
-                </div>
-                <button className="btn-primary magnetic" id="btn-activate">Entrar no Sistema</button>
-            </div>
-        </div>
-    </nav>
+
 
     
     
@@ -101,12 +73,21 @@ export function LandingPage() {
             />
           </div>
         </div>
+
+        {/* MÁSCARA DE TRANSIÇÃO PARA A PRÓXIMA SEÇÃO */}
+        <div className="absolute bottom-0 left-0 w-full h-[30vh] bg-gradient-to-t from-[#030305] via-[#030305]/80 to-transparent z-20 pointer-events-none" />
     </section>
 
     
     
     
     <section className="manifesto-section">
+        {/* Fundo de Universo Minimalista Rotativo */}
+        <div className="manifesto-bg-container">
+            <div className="manifesto-universe-rotating" />
+            <div className="manifesto-frosted-overlay" />
+        </div>
+
         <div className="manifesto-wrapper">
             <blockquote className="manifesto-text reveal-word" id="manifesto">
                 "Todo profissional que trabalha com IA hoje está no mesmo ponto que eu estava há meses, 
