@@ -79,8 +79,8 @@ export function TubesBackground({
     const colors = randomColors(3);
     const lightsColors = randomColors(4);
 
-    tubesRef.current.tubes.setColors(colors);
-    tubesRef.current.tubes.setLightsColors(lightsColors);
+    (tubesRef.current as any).tubes.setColors(colors);
+    (tubesRef.current as any).tubes.setLightsColors(lightsColors);
   };
 
   return (
