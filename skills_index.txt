@@ -1047,3 +1047,9 @@
 - hooks-magneticos: Skill para hooks magneticos
 - link-in-bio: Skill para link in bio
 - roteiro-pauta-quente: Skill para roteiro pauta quente
+
+### CATEGORIA: FRONTEND MASTER (Alta Performance & Design)
+- apple-design-engineering: Engenharia de interfaces fluidas e imersivas estilo Apple com GSAP e Scroll-driven UI.
+- frontend-master-checklist: Protocolo rigoroso de controle de qualidade, SEO, performance e acessibilidade técnica.
+- advanced-css-excellence: Domínio de CSS moderno, layouts resilientes (Grid/Clamp) e padrões de alta performance.
+- modern-web-components: Padrões universais de componentes web encapsulados, nativos e interoperáveis.
