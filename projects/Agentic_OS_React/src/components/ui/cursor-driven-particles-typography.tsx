@@ -145,6 +145,9 @@ export const CursorDrivenParticleTypography: React.FC<CursorDrivenParticleTypogr
       containerWidth = container.clientWidth;
       containerHeight = container.clientHeight;
 
+      // Prevent IndexSizeError if container is not yet rendered or has no dimensions
+      if (containerWidth <= 0 || containerHeight <= 0) return;
+
       const dpr = Math.min(window.devicePixelRatio || 1, 2); // EP: Cap pixel ratio
       canvas.width = containerWidth * dpr;
       canvas.height = containerHeight * dpr;
