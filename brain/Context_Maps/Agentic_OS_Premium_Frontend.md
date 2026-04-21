@@ -32,13 +32,15 @@ Construir a presença web premium (Landing Page) para o Agentic OS, demonstrando
 - [x] Upgrade do Background Estelar para 2400 estrelas com efeito de profundidade e parallax via mouse.
 - [x] Criação do `FloatingProfile` estilo "baseclub" com drag-and-drop e orbital-physics.
 - [x] Resolução de bugs críticos de hidratação (div in p) e exportação (WSoD fix).
+- [x] Implementação do Zero Gap Protocol (layout ultra-compacto eliminando dead space vertical).
+- [x] Otimização de Densidade Visual (Neural Background com 600 partículas e tamanho 2.0).
 - [ ] Deploy para produção.
 
 ### 💡 Novas Lições
+- **Zero Gap Protocol (Layout Densidade):** Para atingir uma estética premium tipo Apple, deve-se combater o "dead space". Componentes de terceiros (como Aceternity) frequentemente trazem `min-h` e `paddings` internos agressivos que devem ser sistematicamente removidos para permitir que as seções se toquem, criando um fluxo contínuo.
+- **Transições de Máscara (Cosmic Seamless):** O uso de `mask-image: linear-gradient(to bottom, transparent, black 25%)` em elementos 3D (Spline) permite "fundir" objetos complexos no fundo escuro, evitando bordas secas e mantendo a imersão.
+- **Hierarquia de Partículas:** O sistema de fundo agora opera em 3 camadas: Estrelas (estático/fundo), Neural Flow (dinâmico/meio) e Tipografia (interativo/frente). O equilíbrio perfeito para 2026 exige alta contagem de partículas no meio (Neural) com opacidade controlada (0.5) para não sobrecarregar visualmente.
 - **Humanismo Técinco (Zero Dash):** A remoção de hífens (`-`) e travessões (`—`) de textos estratégicos altera drasticamente a percepção de qualidade, removendo o "cheiro" de IA e aproximando a marca do tom Apple/Premium.
-- **Hydration Safety (React 19):** O React 19 é rigoroso com aninhamentos ilegais. Componentes de animação de texto (`AppleRevealText`) devem ser `inline-flex` (span) para evitar quebras em cabeçalhos/parágrafos.
-- **Densidade Visual vs Performance:** Usar Canvas 2D planejado com `starsCount` alto (~2400) é mais leve que instanciar milhares de objetos Three.js individuais se o objetivo for apenas um fundo imersivo de estrelas.
-- **Evolutionary Programming em Código (ADAS):** Incorporado o mecanismo autônomo (Ollama, Python) de geração, compilação de mutações TS e auto-avaliação (Fitness + Compilation check) que consegue reescrever abstrações melhorando a manutenibilidade do código.
 
 ---
-**Instrução para a IA**: Ao ler este mapa, priorize a preservação da voz "humanizada". Jamais gere textos técnicos com hífens ou estruturas em tópicos que usem traços. Mantenha a estética "Apple/Stitch.design" como lei suprema.
+**Instrução para a IA**: Ao ler este mapa, priorize a preservação da voz "humanizada" e o "Zero Gap Protocol". Mantenha a estética "Apple/Stitch.design" como lei suprema.

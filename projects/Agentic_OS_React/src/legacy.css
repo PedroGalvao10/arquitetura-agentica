@@ -317,13 +317,13 @@ h2.section-title .reveal-text { display: block; }
 /* ============================================ */
 .hero-section {
     position: relative;
-    min-height: 100vh;
+    min-height: 90vh; /* Reduzido de 100vh */
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     text-align: center;
-    padding: 100px 32px 100px;
+    padding: 60px 32px 80px; /* Reduzido de 100px */
     z-index: 2;
 }
 
@@ -415,21 +415,40 @@ h2.section-title .reveal-text { display: block; }
 /*  COSMIC FLOW BACKGROUND                      */
 /* ============================================ */
 .cosmic-flow-container {
-    background-image: url('./assets/cosmic_bg.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    /* Hero e Manifesto continuam daqui */
+    position: relative;
+    width: 100%;
+    /* Estilos base movidos para Inline no React para garantir carregamento */
+    overflow: visible;
 }
 
 .cosmic-frosted-mask {
     position: absolute;
     inset: 0;
     pointer-events: none;
-    z-index: 1;
-    background: radial-gradient(circle at 50% 50%, rgba(3, 3, 5, 0.1) 0%, rgba(3, 3, 5, 0.8) 100%);
-    -webkit-backdrop-filter: blur(60px);
-    backdrop-filter: blur(60px);
+    z-index: -1; 
+    /* Fade Atmosférico: Muito leve na Hero, sutil no Manifesto */
+    background: linear-gradient(
+        to bottom,
+        rgba(3, 3, 5, 0) 0%,
+        rgba(3, 3, 5, 0.1) 40%,
+        rgba(3, 3, 5, 0.25) 70%,
+        rgba(3, 3, 5, 0.4) 100%
+    );
+    /* Desfoque base sutil para dar continuidade */
+    -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
+}
+
+/* Intensificador Fosco do Manifesto: Mais desfoque, menos cor preta */
+.manifesto-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    /* Efeito de Vidro Jateado que permite ver as cores ao fundo */
+    -webkit-backdrop-filter: blur(18px);
+    backdrop-filter: blur(18px);
+    background: rgba(3, 3, 5, 0.2); 
 }
 
 /* ============================================ */
@@ -437,10 +456,12 @@ h2.section-title .reveal-text { display: block; }
 /* ============================================ */
 .manifesto-section {
     position: relative;
-    padding: 180px 32px;
+    min-height: 70vh; /* Reduzido para aproximar os módulos */
+    padding: 80px 32px; /* Reduzido de 180px */
     display: flex;
     justify-content: center;
     overflow: hidden;
+    background: transparent !important;
 }
 
 .manifesto-wrapper { 
@@ -449,11 +470,6 @@ h2.section-title .reveal-text { display: block; }
     z-index: 10;
 }
 
-.manifesto-wrapper { 
-    max-width: 850px; 
-    position: relative;
-    z-index: 10;
-}
 .manifesto-text {
     font-size: clamp(1.3rem, 2.5vw, 1.8rem);
     font-weight: 400;
@@ -463,6 +479,7 @@ h2.section-title .reveal-text { display: block; }
     padding: 0;
     font-style: normal;
 }
+
 .manifesto-text strong {
     color: var(--text);
     font-weight: 600;
@@ -497,7 +514,7 @@ h2.section-title .reveal-text { display: block; }
 .metrics-section {
     max-width: 1300px;
     margin: 0 auto;
-    padding: 100px 32px;
+    padding: 60px 32px; /* Reduzido de 100px */
 }
 .metrics-header {
     margin-bottom: 60px;
@@ -541,7 +558,7 @@ h2.section-title .reveal-text { display: block; }
 .architecture-section {
     max-width: 1300px;
     margin: 0 auto;
-    padding: 120px 32px;
+    padding: 80px 32px; /* Reduzido de 120px */
 }
 .arch-header {
     margin-bottom: 80px;
@@ -679,7 +696,7 @@ h2.section-title .reveal-text { display: block; }
 .hybrid-section {
     max-width: 1300px;
     margin: 0 auto;
-    padding: 120px 32px;
+    padding: 80px 32px 0; /* Zerei padding inferior */
 }
 .hybrid-header { margin-bottom: 60px; }
 .hybrid-grid {
@@ -770,7 +787,7 @@ h2.section-title .reveal-text { display: block; }
 .terminal-section {
     width: 100%;
     margin: 0;
-    padding: 100px 32px;
+    padding: 0 32px 60px; /* Zerei padding superior */
 }
 .terminal-header-info { margin-bottom: 40px; }
 .terminal-window { overflow: hidden; }

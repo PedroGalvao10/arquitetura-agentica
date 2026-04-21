@@ -39,10 +39,10 @@ export const ContainerScroll = ({
 
   return (
     <div
-      className="h-[60rem] md:h-[80rem] flex items-center justify-center relative p-2 md:p-20"
+      className="flex items-start justify-center relative p-0 w-full"
       ref={containerRef}
     >
-      <div className="py-10 md:py-40 w-full relative [perspective:1000px]">
+      <div className="pt-0 w-full relative [perspective:1000px]">
         <Header translate={translate} titleComponent={titleComponent} />
         <Card rotate={rotate} translate={translate} scale={scale}>
           {children}

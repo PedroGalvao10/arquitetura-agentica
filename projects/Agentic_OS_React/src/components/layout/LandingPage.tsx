@@ -6,6 +6,8 @@ import { SplineScene } from '@/components/ui/spline-scene';
 import { Spotlight } from '@/components/ui/spotlight';
 import { useScroll, useTransform, motion } from 'framer-motion';
 import { ContainerScroll } from '@/components/ui/container-scroll-animation';
+import { CursorDrivenParticleTypography } from '@/components/ui/cursor-driven-particles-typography';
+import cosmicBg from '../../assets/cosmic_bg.png';
 
 export function LandingPage() {
   const { scrollYProgress } = useScroll();
@@ -36,7 +38,19 @@ export function LandingPage() {
     
     
     
-    <div className="cosmic-flow-container relative overflow-hidden">
+    <div 
+      className="cosmic-flow-container relative overflow-visible" 
+      style={{ 
+        backgroundImage: `url(${cosmicBg})`,
+        backgroundAttachment: 'fixed',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center center',
+        minHeight: '100vh',
+        width: '100%',
+        zIndex: 50,
+        display: 'block'
+      }}
+    >
       <div className="cosmic-frosted-mask" />
       
       <section className="hero-section relative" id="visao">
@@ -69,8 +83,16 @@ export function LandingPage() {
               </div>
             </div>
 
-            {/* Lado direito — robô 3D interativo */}
-            <div className="hidden md:block flex-1 relative">
+            {/* Lado direito — robô 3D interativo com escala aumentada e mergulho no fade */}
+            <div 
+              className="hidden md:block flex-1 relative"
+              style={{ 
+                maskImage: 'linear-gradient(to bottom, black 75%, transparent 95%)',
+                WebkitMaskImage: 'linear-gradient(to bottom, black 75%, transparent 95%)',
+                transform: 'scale(1.25) translateY(80px) translateX(20px)',
+                transformOrigin: 'center center'
+              }}
+            >
               <SplineScene
                 scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
                 className="w-full h-full"
@@ -78,11 +100,14 @@ export function LandingPage() {
             </div>
           </div>
 
-          {/* MÁSCARA DE TRANSIÇÃO PARA A PRÓXIMA SEÇÃO */}
-          <div className="absolute bottom-0 left-0 w-full h-[30vh] bg-gradient-to-t from-[#030305] via-[#030305]/80 to-transparent z-20 pointer-events-none" />
+          {/* MÁSCARA DE TRANSIÇÃO ESCURA — HERO PARA MANIFESTO */}
+          <div className="absolute bottom-0 left-0 w-full h-[40vh] bg-gradient-to-t from-[#030305] via-[#030305]/60 to-transparent z-20 pointer-events-none" />
       </section>
       
-      <section className="manifesto-section !bg-transparent">
+      <section className="manifesto-section !bg-transparent relative">
+          {/* MÁSCARA DE TRANSIÇÃO ESCURA — ENTRADA DO MANIFESTO */}
+          <div className="absolute top-0 left-0 w-full h-[30vh] bg-gradient-to-b from-[#030305] to-transparent z-20 pointer-events-none" />
+          
           <div className="manifesto-wrapper">
               <blockquote className="manifesto-text reveal-word" id="manifesto">
                   "Todo profissional que trabalha com IA hoje está no mesmo ponto que eu estava há meses, 
@@ -93,6 +118,9 @@ export function LandingPage() {
               </blockquote>
           </div>
       </section>
+
+      {/* MÁSCARA DE TRANSIÇÃO ESCURA — FINALIZAÇÃO DO COSMOS */}
+      <div className="absolute bottom-0 left-0 w-full h-[30vh] bg-gradient-to-t from-[#030305] via-[#030305]/80 to-transparent z-20 pointer-events-none" />
     </div>
 
     
@@ -292,6 +320,22 @@ export function LandingPage() {
                     <span>Roteamento Inteligente Automático via {" "}<AgenticHoverLink previewKey="orchestrator">Orquestrador</AgenticHoverLink>{" "}</span>
                 </div>
             </div>
+        </div>
+    </section>
+
+    {/* ASSINATURA REPOSICIONADA — TRANSIÇÃO ULTRA-COMPACTA (ZERO GAP) */}
+    <section className="relative overflow-hidden bg-transparent py-0 flex items-center justify-center min-h-[160px]">
+        <div className="w-full max-w-7xl">
+            <CursorDrivenParticleTypography 
+                text="PEDRO GALVÃO" 
+                fontSize={160}
+                color="#ffffff"
+                particleDensity={5}
+                particleSize={1.5}
+                dispersionStrength={25}
+                returnSpeed={0.12}
+                className="opacity-100"
+            />
         </div>
     </section>
 

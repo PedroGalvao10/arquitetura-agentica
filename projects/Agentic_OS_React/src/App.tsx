@@ -124,13 +124,14 @@ function App() {
           {/* Layer 1.5: Stars Background with Warp Control */}
           <StarsBackground density={800} opacity={0.4} warpSpeed={warpSpeed} />
 
-          {/* Layer 2: Neural Particles (Reduced for performance) */}
-          <div className="absolute inset-0 z-10 opacity-30 mix-blend-screen">
+          {/* Layer 2: Neural Particles (Enhanced for visual depth) */}
+          <div className="absolute inset-0 z-10 opacity-50 mix-blend-screen">
             <NeuralBackground 
               color="#6e56ff" 
-              trailOpacity={0.05} 
-              particleCount={80} 
-              speed={0.2} 
+              trailOpacity={0.04} 
+              particleCount={600} 
+              particleSize={2.0}
+              speed={0.3} 
             />
           </div>
         </div>

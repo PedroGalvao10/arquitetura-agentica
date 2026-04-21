@@ -6,14 +6,16 @@ interface NeuralBackgroundProps {
   color?: string;
   trailOpacity?: number;
   particleCount?: number;
+  particleSize?: number;
   speed?: number;
 }
 
 export default function NeuralBackground({
   className,
   color = "#6366f1",
-  trailOpacity = 0.15,
-  particleCount = 600,
+  trailOpacity = 0.08,
+  particleCount = 1000,
+  particleSize = 1.8,
   speed = 1,
 }: NeuralBackgroundProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
