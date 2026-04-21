@@ -173,7 +173,7 @@ export const BackgroundGradientAnimation = ({
         )}
       </div>
       {interactive && (
-        <div className="absolute inset-0 z-20 pointer-events-auto" onMouseMove={handleMouseMove} style={{ background: "transparent"}} />
+        <div className="absolute inset-0 z-20 pointer-events-auto bg-transparent" onMouseMove={handleMouseMove} />
       )}
     </div>
   );

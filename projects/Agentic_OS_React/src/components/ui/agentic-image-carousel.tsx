@@ -94,7 +94,7 @@ export function AgenticImageCarousel({
               return (
                 <div
                   key={image.id}
-                  className="absolute w-40 h-52 sm:w-48 sm:h-64 transition-all duration-300"
+                  className="absolute w-40 h-52 sm:w-48 sm:h-64 transition-all duration-300 [transform-style:preserve-3d]"
                   style={{
                     transform: `
                       translate(${x}px, ${y}px)
@@ -102,7 +102,6 @@ export function AgenticImageCarousel({
                       rotateY(${perspectiveX}deg)
                       rotateZ(${image.rotation}deg)
                     `,
-                    transformStyle: "preserve-3d",
                   }}
                 >
                   <div

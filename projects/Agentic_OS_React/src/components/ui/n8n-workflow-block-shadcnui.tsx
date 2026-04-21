@@ -229,10 +229,8 @@ export function AgenticWorkflowBlock() {
                 style={{
                   x: node.position.x,
                   y: node.position.y,
-                  width: NODE_WIDTH,
-                  transformOrigin: "0 0",
                 }}
-                className="absolute cursor-grab"
+                className="absolute cursor-grab w-[200px] origin-top-left"
                 initial={{ scale: 0.8, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ duration: 0.2 }}
