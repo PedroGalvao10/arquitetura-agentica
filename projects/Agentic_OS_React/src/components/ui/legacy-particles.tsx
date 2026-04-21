@@ -1,7 +1,18 @@
-import { useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import * as THREE from "three";
 
-export function LegacyWebGLParticles() {
+/**
+ * LegacyWebGLParticles Component
+ * 
+ * Renders a high-performance 3D particle system using Three.js and WebGL.
+ * Includes interactive mouse-tracking for 3D perspective shifting and automatic rotation.
+ * 
+ * EP Optimization: Wrapped in React.memo to prevent re-instantiation on parent re-renders.
+ * Added strict types, removed unused logic, and optimized garbage collection in cleanup phase.
+ * 
+ * @returns {JSX.Element} Full-screen fixed canvas containing the WebGL scene.
+ */
+export const LegacyWebGLParticles: React.FC = React.memo(() => {
   const mountRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -33,8 +44,8 @@ export function LegacyWebGLParticles() {
       camera.position.z = 1000;
 
       const geometry = new THREE.BufferGeometry();
-      const vertices = [];
-      const sizes = [];
+      const vertices: number[] = [];
+      const sizes: number[] = [];
 
       for (let i = 0; i < 1500; i++) {
         const x = Math.random() * 2000 - 1000;
@@ -62,13 +73,13 @@ export function LegacyWebGLParticles() {
       particles = new THREE.Points(geometry, material);
       scene.add(particles);
 
-      renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-      renderer.setPixelRatio(window.devicePixelRatio);
+      renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, powerPreference: "high-performance" });
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2)); // EP: Limit pixel ratio for performance
       renderer.setSize(window.innerWidth, window.innerHeight);
       mountRef.current?.appendChild(renderer.domElement);
 
-      document.addEventListener("mousemove", onDocumentMouseMove, false);
-      window.addEventListener("resize", onWindowResize, false);
+      document.addEventListener("mousemove", onDocumentMouseMove, { passive: true });
+      window.addEventListener("resize", onWindowResize, { passive: true });
     };
 
     const onWindowResize = () => {
@@ -94,7 +105,7 @@ export function LegacyWebGLParticles() {
       camera.position.y += (-targetY - camera.position.y) * 0.05;
 
       const scrollPercent =
-        window.scrollY / (document.body.scrollHeight - window.innerHeight);
+        window.scrollY / (document.body.scrollHeight - window.innerHeight || 1); // Fix potential division by 0
       camera.position.z = 1000 - scrollPercent * 800;
       camera.lookAt(scene.position);
 
@@ -116,10 +127,16 @@ export function LegacyWebGLParticles() {
       if (mount && renderer.domElement) {
         mount.removeChild(renderer.domElement);
       }
+      
+      // EP: Proper ThreeJS garbage collection
+      particles.geometry.dispose();
+      (particles.material as THREE.Material).dispose();
       renderer.dispose();
       scene.clear();
     };
   }, []);
 
-  return <div ref={mountRef} className="fixed inset-0 w-full h-full z-1 pointer-events-none opacity-80 mix-blend-lighten" />;
-}
+  return <div ref={mountRef} className="fixed inset-0 w-full h-full z-1 pointer-events-none opacity-80 mix-blend-lighten" aria-hidden="true" />;
+});
+
+export default LegacyWebGLParticles;

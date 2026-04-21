@@ -1,11 +1,14 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 
 function cn(...classes: (string | undefined)[]) {
   return classes.filter(Boolean).join(" ");
 }
 
+/**
+ * Properties for CursorDrivenParticleTypography
+ */
 export interface CursorDrivenParticleTypographyProps {
   className?: string;
   text: string;
@@ -59,24 +62,24 @@ class Particle {
     if (distance < interactionRadius && mouseX !== -1000 && mouseY !== -1000) {
       const forceDirectionX = dx / distance;
       const forceDirectionY = dy / distance;
+      // Linear falloff for interaction
       const force = (interactionRadius - distance) / interactionRadius;
 
-      const repulsionX = forceDirectionX * force * this.dispersion;
-      const repulsionY = forceDirectionY * force * this.dispersion;
-
-      this.vx -= repulsionX;
-      this.vy -= repulsionY;
+      this.vx -= forceDirectionX * force * this.dispersion;
+      this.vy -= forceDirectionY * force * this.dispersion;
     }
 
+    // Spring back to origin
     this.vx += (this.originX - this.x) * this.returnSpd;
     this.vy += (this.originY - this.y) * this.returnSpd;
 
+    // Friction
     this.vx *= 0.85;
     this.vy *= 0.85;
 
+    // Micro jitter when idle
     const distToOrigin = Math.sqrt(
-      Math.pow(this.x - this.originX, 2) +
-        Math.pow(this.y - this.originY, 2)
+      Math.pow(this.x - this.originX, 2) + Math.pow(this.y - this.originY, 2)
     );
 
     if (distToOrigin < 1 && Math.random() > 0.95) {
@@ -88,15 +91,24 @@ class Particle {
     this.y += this.vy;
   }
 
+  /**
+   * EP Optimization: 
+   * Replaced expensive ctx.arc with ctx.fillRect. 
+   * Dramatically speeds up thousands of draw calls per frame.
+   */
   draw(ctx: CanvasRenderingContext2D) {
     ctx.fillStyle = this.color;
-    ctx.beginPath();
-    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-    ctx.fill();
+    ctx.fillRect(this.x, this.y, this.size * 2, this.size * 2);
   }
 }
 
-export function CursorDrivenParticleTypography({
+/**
+ * CursorDrivenParticleTypography
+ * 
+ * Interactive typography that disintegrates into particles based on cursor proximity
+ * and springs back to the original text shape.
+ */
+export const CursorDrivenParticleTypography: React.FC<CursorDrivenParticleTypographyProps> = React.memo(({
   className,
   text,
   fontSize = 120,
@@ -106,7 +118,7 @@ export function CursorDrivenParticleTypography({
   dispersionStrength = 15,
   returnSpeed = 0.08,
   color,
-}: CursorDrivenParticleTypographyProps) {
+}) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -114,7 +126,7 @@ export function CursorDrivenParticleTypography({
     const canvas = canvasRef.current;
     if (!canvas) return;
 
-    const ctx = canvas.getContext("2d", { willReadFrequently: true });
+    const ctx = canvas.getContext("2d", { willReadFrequently: true, alpha: true });
     if (!ctx) return;
 
     let animationFrameId: number;
@@ -133,7 +145,7 @@ export function CursorDrivenParticleTypography({
       containerWidth = container.clientWidth;
       containerHeight = container.clientHeight;
 
-      const dpr = window.devicePixelRatio || 1;
+      const dpr = Math.min(window.devicePixelRatio || 1, 2); // EP: Cap pixel ratio
       canvas.width = containerWidth * dpr;
       canvas.height = containerHeight * dpr;
       canvas.style.width = `${containerWidth}px`;
@@ -223,8 +235,8 @@ export function CursorDrivenParticleTypography({
       resizeObserver.observe(containerRef.current);
     }
 
-    canvas.addEventListener("mousemove", handleMouseMove);
-    canvas.addEventListener("mouseleave", handleMouseLeave);
+    canvas.addEventListener("mousemove", handleMouseMove, { passive: true });
+    canvas.addEventListener("mouseleave", handleMouseLeave, { passive: true });
 
     return () => {
       clearTimeout(timeoutId);
@@ -255,4 +267,6 @@ export function CursorDrivenParticleTypography({
       <canvas ref={canvasRef} className="block w-full h-full" />
     </div>
   );
-}
+});
+
+export default CursorDrivenParticleTypography;

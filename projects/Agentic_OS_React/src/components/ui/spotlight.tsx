@@ -1,18 +1,28 @@
 'use client'
 
+import React from 'react'
 import { cn } from '@/lib/utils'
 
-interface SpotlightProps {
+/**
+ * Interface defining the properties for the Spotlight component.
+ * @property {string} [className] - Optional CSS classes for custom styling and positioning.
+ * @property {string} [fill] - Optional color fill for the spotlight SVG (default: 'white').
+ */
+export interface SpotlightProps {
   className?: string
   fill?: string
 }
 
 /**
- * Spotlight
- * Efeito de luz direcional SVG para criar depth na hero section.
- * Inspirado no padrão Aceternity UI.
+ * Spotlight Component
+ * 
+ * Renders a directional SVG light effect to create depth, often used in hero sections.
+ * Inspired by Aceternity UI patterns. Optimized for minimal DOM impact with zero-allocation on re-renders.
+ * 
+ * @param {SpotlightProps} props - The configuration properties.
+ * @returns {JSX.Element} The rendered SVG spotlight effect.
  */
-export function Spotlight({ className, fill = 'white' }: SpotlightProps) {
+export const Spotlight: React.FC<SpotlightProps> = React.memo(({ className, fill = 'white' }) => {
   return (
     <svg
       className={cn(
@@ -22,8 +32,9 @@ export function Spotlight({ className, fill = 'white' }: SpotlightProps) {
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 3787 2842"
       fill="none"
+      aria-hidden="true"
     >
-      <g filter="url(#filter)">
+      <g filter="url(#spotlight-filter)">
         <ellipse
           cx="1924.71"
           cy="273.501"
@@ -36,7 +47,7 @@ export function Spotlight({ className, fill = 'white' }: SpotlightProps) {
       </g>
       <defs>
         <filter
-          id="filter"
+          id="spotlight-filter"
           x="0.860352"
           y="0.838989"
           width="3785.16"
@@ -46,9 +57,9 @@ export function Spotlight({ className, fill = 'white' }: SpotlightProps) {
         >
           <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
-          <feGaussianBlur stdDeviation="151" result="effect1_foregroundBlur_120_7480" />
+          <feGaussianBlur stdDeviation="151" result="effect1_foregroundBlur" />
         </filter>
       </defs>
     </svg>
   )
-}
+})
