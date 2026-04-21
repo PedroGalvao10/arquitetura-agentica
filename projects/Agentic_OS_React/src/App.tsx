@@ -1,16 +1,19 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { BackgroundGradientAnimation } from "@/components/ui/background-gradient-animation";
-import NeuralBackground from "@/components/ui/flow-field-background";
 import { SplashCover } from "@/components/sections/SplashCover";
 import { CinematicFooter } from "@/components/ui/motion-footer";
 import { AgenticHoverProvider } from "@/components/ui/agentic-hover-link";
 import { LandingPage } from "@/components/layout/LandingPage";
 import { Navbar } from "@/components/layout/Navbar";
-
 import { FloatingProfile } from "@/components/ui/floating-profile";
-import { StarsBackground } from "@/components/ui/stars-background";
+
+// ─── Atmospheric Background System (5 Layers) ───
+import { AuroraWebGL } from "@/components/ui/aurora-webgl";
+import { ChromaticWaveWebGL } from "@/components/ui/chromatic-wave-webgl";
+import { IcosahedronWebGL } from "@/components/ui/icosahedron-webgl";
+import { FluidCursorWebGL } from "@/components/ui/fluid-cursor-webgl";
+import NeuralBackground from "@/components/ui/flow-field-background";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -19,7 +22,6 @@ if (typeof window !== "undefined") {
 function App() {
   const splashRef = useRef<HTMLDivElement>(null);
   const landingRef = useRef<HTMLDivElement>(null);
-  const [warpSpeed, setWarpSpeed] = useState(0);
   
   useEffect(() => {
     if (!splashRef.current || !landingRef.current) return;
@@ -39,16 +41,6 @@ function App() {
         invalidateOnRefresh: true,
       },
     });
-
-    // Fase 1: Início do Warp Speed e Zoom Out da Tipografia
-    tl.to({ val: 0 }, {
-      val: 1,
-      duration: 0.8,
-      onUpdate: function() {
-        setWarpSpeed(this.targets()[0].val);
-      },
-      ease: "power2.in"
-    }, 0);
 
     // Fase 2: Conteúdo da Capa "voa" para longe (Zoom Out)
     tl.to(".will-change-transform", {
@@ -105,26 +97,27 @@ function App() {
 
   return (
     <AgenticHoverProvider>
-      <div className="relative w-full min-h-screen bg-[#030305] text-white font-sans selection:bg-purple-500/30">
+      <div className="relative w-full min-h-screen bg-black text-white font-sans selection:bg-purple-500/30">
         <Navbar />
         
-        {/* Camadas de Fundo Otimizadas */}
-        <div className="fixed inset-0 z-0 pointer-events-none">
-          {/* Layer 1: Ambient Gradients (Very Fast) */}
-          <div className="absolute inset-0 z-0">
-             <BackgroundGradientAnimation
-                blendingValue="soft-light"
-                interactive={false}
-                containerClassName="w-full h-full"
-                className="w-full h-full opacity-60"
-             />
-          </div>
+        {/* ═══ ATMOSPHERIC BACKGROUND SYSTEM ═══
+             5 camadas empilhadas com mix-blend-mode: screen (aditivo)
+             Tudo fixed + pointer-events: none → conteúdo intocável */}
+        <div className="fixed inset-0 z-0 pointer-events-none bg-black">
+          {/* z-0: Aurora Nebula — FBM noise, brilho atmosférico ~6% */}
+          <AuroraWebGL />
 
-          {/* Layer 1.5: Stars Background with Warp Control */}
-          <StarsBackground density={800} opacity={0.4} warpSpeed={warpSpeed} />
+          {/* z-1: Chromatic Wave — Aberração cromática senoidal */}
+          <ChromaticWaveWebGL />
 
-          {/* Layer 2: Neural Particles (Enhanced for visual depth) */}
-          <div className="absolute inset-0 z-10 opacity-50 mix-blend-screen">
+          {/* z-2: Icosahedron Wireframe — Sólido platônico rotativo */}
+          <IcosahedronWebGL />
+
+          {/* z-3: Fluid Cursor — Glow FBM seguindo o mouse */}
+          <FluidCursorWebGL />
+
+          {/* z-4: Neural Particles — Canvas 2D flow field (camada mais alta) */}
+          <div className="absolute inset-0" style={{ zIndex: 4, mixBlendMode: 'screen', opacity: 0.5 }}>
             <NeuralBackground 
               color="#6e56ff" 
               trailOpacity={0.04} 

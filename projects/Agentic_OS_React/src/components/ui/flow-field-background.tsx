@@ -125,10 +125,39 @@ export default function NeuralBackground({
       ctx.fillStyle = `rgba(8, 8, 15, ${trailOpacity})`;
       ctx.fillRect(0, 0, width, height);
 
+      // Atualiza e desenha partículas individuais
       particles.forEach((p) => {
         p.update();
         p.draw(ctx);
       });
+
+      // Woven Particle Connections (gossamer lines)
+      ctx.lineWidth = 0.5;
+      const connectionRadius = 100;
+      const connectionRadiusSq = connectionRadius * connectionRadius;
+      
+      // Otimização: conectar apenas um subconjunto para manter 60fps constantes
+      const maxConnectors = Math.min(particles.length, 300);
+      
+      for (let i = 0; i < maxConnectors; i++) {
+        for (let j = i + 1; j < maxConnectors; j++) {
+          const dx = particles[i].x - particles[j].x;
+          const dy = particles[i].y - particles[j].y;
+          const distSq = dx * dx + dy * dy;
+
+          if (distSq < connectionRadiusSq) {
+            const dist = Math.sqrt(distSq);
+            const alpha = (1 - dist / connectionRadius) * 0.2; // Suave opacidade (max 20%)
+            
+            // Usamos a mesma cor base das partículas, mas com opacidade variável
+            ctx.strokeStyle = `rgba(110, 86, 255, ${alpha})`;
+            ctx.beginPath();
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+            ctx.stroke();
+          }
+        }
+      }
 
       animationFrameId = requestAnimationFrame(animate);
     };
