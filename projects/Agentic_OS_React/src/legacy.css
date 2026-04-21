@@ -322,7 +322,7 @@ h2.section-title .reveal-text { display: block; }
     justify-content: center;
     flex-direction: column;
     text-align: center;
-    padding: 140px 32px 100px;
+    padding: 100px 32px 100px;
     z-index: 1;
 }
 
@@ -775,8 +775,8 @@ h2.section-title .reveal-text { display: block; }
 /*  TERMINAL                                    */
 /* ============================================ */
 .terminal-section {
-    max-width: 1300px;
-    margin: 0 auto;
+    width: 100%;
+    margin: 0;
     padding: 100px 32px;
 }
 .terminal-header-info { margin-bottom: 40px; }
@@ -911,9 +911,12 @@ h2.section-title .reveal-text { display: block; }
 /*  EVOLUTION                                   */
 /* ============================================ */
 .evolution-section {
+    position: relative;
+    z-index: 20;
+    background: #030305;
     max-width: 1300px;
     margin: 0 auto;
-    padding: 120px 32px;
+    padding: 160px 32px;
 }
 .evo-header { margin-bottom: 60px; }
 .evo-content {
@@ -1017,9 +1020,12 @@ h2.section-title .reveal-text { display: block; }
 /*  SELF-ANNEALING                              */
 /* ============================================ */
 .annealing-section {
+    position: relative;
+    z-index: 20;
+    background: #030305;
     max-width: 1300px;
     margin: 0 auto;
-    padding: 60px 32px 120px;
+    padding: 160px 32px;
 }
 .anneal-content {
     display: flex;
@@ -1070,9 +1076,12 @@ h2.section-title .reveal-text { display: block; }
 /*  GOVERNANCE                                  */
 /* ============================================ */
 .governance-section {
+    position: relative;
+    z-index: 20;
+    background: #030305;
     max-width: 1300px;
     margin: 0 auto;
-    padding: 120px 32px;
+    padding: 160px 32px 240px;
 }
 .gov-header { margin-bottom: 60px; }
 .rules-showcase {

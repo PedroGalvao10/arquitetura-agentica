@@ -276,9 +276,9 @@ export function CinematicFooter() {
       <style dangerouslySetInnerHTML={{ __html: STYLES }} />
       <div
         ref={wrapperRef}
-        className="relative h-screen w-full mt-24 footer-clip"
+        className="relative h-screen w-full mt-64 footer-clip z-0"
       >
-        <footer className="fixed bottom-0 left-0 flex h-screen w-full flex-col justify-between overflow-hidden text-neutral-100 cinematic-footer-wrapper border-t border-white/5">
+        <footer className="fixed bottom-0 left-0 flex h-screen w-full flex-col justify-between overflow-hidden text-neutral-100 cinematic-footer-wrapper border-t border-white/5 z-[5]">
           <div className="footer-aurora absolute left-1/2 top-1/2 h-[60vh] w-[80vw] -translate-x-1/2 -translate-y-1/2 animate-footer-breathe rounded-[50%] blur-[80px] pointer-events-none z-0" />
           <div className="footer-bg-grid absolute inset-0 z-0 pointer-events-none opacity-40" />
 

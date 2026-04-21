@@ -5,6 +5,7 @@ import { AppleRevealText, LetterTypewriter } from '@/components/ui/apple-reveal-
 import { SplineScene } from '@/components/ui/spline-scene';
 import { Spotlight } from '@/components/ui/spotlight';
 import { useScroll, useTransform, motion } from 'framer-motion';
+import { ContainerScroll } from '@/components/ui/container-scroll-animation';
 
 export function LandingPage() {
   const { scrollYProgress } = useScroll();
@@ -96,10 +97,6 @@ export function LandingPage() {
                 escreve código, testa, corrige e entrega. Sem intermediários. Sem alucinações. 
                 Sem perda de contexto."
             </blockquote>
-            <div className="manifesto-author reveal">
-                <div className="author-line"></div>
-                <span>Design Estratégico S.O.A.R.E.S</span>
-            </div>
         </div>
     </section>
 
@@ -306,32 +303,37 @@ export function LandingPage() {
     
     
     
-    <section className="terminal-section">
-        <div className="terminal-header-info">
-            <span className="section-label reveal">EXECUÇÃO EM TEMPO REAL</span>
-            <h2 className="section-title reveal-text">Veja o Sistema<br />Trabalhando.</h2>
-        </div>
-        <div className="terminal-window glass reveal">
-            <div className="terminal-bar">
-                <div className="terminal-dots">
-                    <span className="dot red"></span>
-                    <span className="dot yellow"></span>
-                    <span className="dot green"></span>
-                </div>
-                <span className="terminal-title">agentic os powershell ~/scratch/execution</span>
+    <section className="terminal-section overflow-hidden py-10 md:py-20" id="execucao">
+        <ContainerScroll
+          titleComponent={
+            <div className="terminal-header-info">
+                <span className="section-label reveal">EXECUÇÃO EM TEMPO REAL</span>
+                <h2 className="section-title reveal-text">Veja o Sistema<br />Trabalhando.</h2>
             </div>
-            <div className="terminal-body" id="terminal-output">
-                <div className="terminal-line"><span className="line-num">01</span> <span className="keyword">import</span> agentic_os</div>
-                <div className="terminal-line"><span className="line-num">02</span> </div>
-                <div className="terminal-line"><span className="line-num">03</span> <LetterTypewriter text="# Inicializando Força de Trabalho Digital" className="comment" /></div>
-                <div className="terminal-line"><span className="line-num">04</span> <span className="keyword">const</span> orchestrator = agentic_os.<span className="func">boot</span>({`{`}</div>
-                <div className="terminal-line"><span className="line-num">05</span>     strategy: <span className="string">"autonomous"</span>,</div>
-                <div className="terminal-line"><span className="line-num">06</span>     context: <span className="string">"<AgenticHoverLink previewKey="obsidian">obsidian_brain</AgenticHoverLink>"</span></div>
-                <div className="terminal-line"><span className="line-num">07</span> {`})`}</div>
-                <div className="terminal-line"><span className="line-num">08</span> </div>
-                <div className="terminal-line active"><span className="line-num">09</span> <span className="keyword">await</span> {" "}<AgenticHoverLink previewKey="orchestrator">orchestrator</AgenticHoverLink>{" "}.<span className="func">solve</span>(<span className="string">"deploy modern app"</span>)</div>
-            </div>
-        </div>
+          }
+        >
+          <div className="terminal-window !border-0 !bg-transparent !shadow-none !m-0 h-full w-full flex flex-col">
+              <div className="terminal-bar">
+                  <div className="terminal-dots">
+                      <span className="dot red"></span>
+                      <span className="dot yellow"></span>
+                      <span className="dot green"></span>
+                  </div>
+                  <span className="terminal-title">agentic os powershell ~/scratch/execution</span>
+              </div>
+              <div className="terminal-body !h-full flex-1" id="terminal-output">
+                  <div className="terminal-line"><span className="line-num">01</span> <span className="keyword">import</span> agentic_os</div>
+                  <div className="terminal-line"><span className="line-num">02</span> </div>
+                  <div className="terminal-line"><span className="line-num">03</span> <LetterTypewriter text="# Inicializando Força de Trabalho Digital" className="comment" /></div>
+                  <div className="terminal-line"><span className="line-num">04</span> <span className="keyword">const</span> orchestrator = agentic_os.<span className="func">boot</span>({`{`}</div>
+                  <div className="terminal-line"><span className="line-num">05</span>     strategy: <span className="string">"autonomous"</span>,</div>
+                  <div className="terminal-line"><span className="line-num">06</span>     context: <span className="string">"<AgenticHoverLink previewKey="obsidian">obsidian_brain</AgenticHoverLink>"</span></div>
+                  <div className="terminal-line"><span className="line-num">07</span> {`})`}</div>
+                  <div className="terminal-line"><span className="line-num">08</span> </div>
+                  <div className="terminal-line active"><span className="line-num">09</span> <span className="keyword">await</span> {" "}<AgenticHoverLink previewKey="orchestrator">orchestrator</AgenticHoverLink>{" "}.<span className="func">solve</span>(<span className="string">"deploy modern app"</span>)</div>
+              </div>
+          </div>
+        </ContainerScroll>
     </section>
 
     <section className="skills-section pt-4 overflow-visible" id="skills">

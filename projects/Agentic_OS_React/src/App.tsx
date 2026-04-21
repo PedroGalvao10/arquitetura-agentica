@@ -27,7 +27,7 @@ function App() {
 
     // Garante estado inicial limpo
     gsap.set(splashRef.current, { clipPath: "circle(100% at 50% 50%)", opacity: 1 });
-    gsap.set(landingRef.current, { opacity: 0, scale: 0.95, y: 30 });
+    gsap.set(landingRef.current, { opacity: 0, scale: 0.95, y: 0 });
 
     const tl = gsap.timeline({
       scrollTrigger: {
@@ -35,6 +35,8 @@ function App() {
         start: "top top",
         end: "100vh",
         scrub: 1.5, 
+        pin: landingRef.current,
+        pinSpacing: true, // Isso substitui o divisor h-screen manual
         invalidateOnRefresh: true,
       },
     });
@@ -140,11 +142,8 @@ function App() {
         >
           <SplashCover />
         </div>
-        
-        {/* ESPAÇADOR PARA SCROLL */}
-        <div className="h-screen w-full invisible pointer-events-none" />
 
-        {/* CONTEÚDO PRINCIPAL */}
+        {/* CONTEÚDO PRINCIPAL (LANDING PAGE COM PIN) */}
         <main 
           ref={landingRef} 
           className="relative z-10 w-full min-h-screen overflow-visible will-change-[transform,opacity]"
