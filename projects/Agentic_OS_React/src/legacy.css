@@ -324,7 +324,7 @@ h2.section-title .reveal-text { display: block; }
     flex-direction: column;
     text-align: center;
     padding: 100px 32px 100px;
-    z-index: 1;
+    z-index: 2;
 }
 
 .hero-content {
@@ -412,6 +412,27 @@ h2.section-title .reveal-text { display: block; }
 }
 
 /* ============================================ */
+/*  COSMIC FLOW BACKGROUND                      */
+/* ============================================ */
+.cosmic-flow-container {
+    background-image: url('./assets/cosmic_bg.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* Hero e Manifesto continuam daqui */
+}
+
+.cosmic-frosted-mask {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    background: radial-gradient(circle at 50% 50%, rgba(3, 3, 5, 0.1) 0%, rgba(3, 3, 5, 0.8) 100%);
+    -webkit-backdrop-filter: blur(60px);
+    backdrop-filter: blur(60px);
+}
+
+/* ============================================ */
 /*  MANIFESTO                                   */
 /* ============================================ */
 .manifesto-section {
@@ -420,42 +441,12 @@ h2.section-title .reveal-text { display: block; }
     display: flex;
     justify-content: center;
     overflow: hidden;
-    background: #000;
 }
 
-.manifesto-bg-container {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-    pointer-events: none;
-}
-
-.manifesto-universe-rotating {
-    position: absolute;
-    width: 250vw;
-    height: 250vw;
-    top: -75vw;
-    left: -75vw;
-    background-image: url('./assets/minimalist-universe.png');
-    background-size: cover;
-    background-position: center;
-    opacity: 0.5;
-    animation: universe-rotate 180s linear infinite;
-    filter: blur(2px) saturate(0.5);
-}
-
-@keyframes universe-rotate {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-}
-
-.manifesto-frosted-overlay {
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(circle at 50% 50%, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.7) 100%);
-    -webkit-backdrop-filter: blur(8px);
-    backdrop-filter: blur(8px);
-    z-index: 1;
+.manifesto-wrapper { 
+    max-width: 850px; 
+    position: relative;
+    z-index: 10;
 }
 
 .manifesto-wrapper { 
