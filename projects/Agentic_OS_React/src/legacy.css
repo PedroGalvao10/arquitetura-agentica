@@ -1278,3 +1278,20 @@ h2.section-title .reveal-text { display: block; }
     font-size: 0.75rem;
     color: #94A3B8;
 }
+
+/* ============================================ */
+/*  HERO 3D SPLINE WRAPPER                      */
+/* ============================================ */
+.hero-spline-wrapper {
+  mask-image: linear-gradient(to bottom, black 75%, transparent 95%);
+  -webkit-mask-image: linear-gradient(to bottom, black 75%, transparent 95%);
+  transform: scale(1.25) translateY(80px) translateX(20px);
+  transform-origin: center center;
+}
+
+/* ============================================ */
+/*  CONTAINER SCROLL SHADOW                     */
+/* ============================================ */
+.container-scroll-card {
+    box-shadow: 0 0 #0000004d, 0 9px 20px #0000004a, 0 37px 37px #00000042, 0 84px 50px #00000026, 0 149px 60px #0000000a, 0 233px 65px #00000003;
+}

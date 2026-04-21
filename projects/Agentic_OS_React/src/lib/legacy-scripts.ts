@@ -30,31 +30,35 @@ export function initLegacyScripts() {
   // ====================================
   //  4. MAGNETIC BUTTONS & CARD GLOW
   // ====================================
-  const magneticListeners: any[] = [];
-  document.querySelectorAll('.magnetic').forEach((btn: any) => {
-      const mm = (e: any) => {
-          const rect = btn.getBoundingClientRect();
-          const x = e.clientX - rect.left - rect.width / 2;
-          const y = e.clientY - rect.top - rect.height / 2;
-          btn.style.transform = `translate(${x * 0.25}px, ${y * 0.25}px)`;
+  const magneticListeners: { btn: HTMLElement, mm: EventListener, ml: EventListener }[] = [];
+  document.querySelectorAll('.magnetic').forEach((btn) => {
+      const htmlBtn = btn as HTMLElement;
+      const mm = (e: MouseEvent | Event) => {
+          const mouseEvent = e as MouseEvent;
+          const rect = htmlBtn.getBoundingClientRect();
+          const x = mouseEvent.clientX - rect.left - rect.width / 2;
+          const y = mouseEvent.clientY - rect.top - rect.height / 2;
+          htmlBtn.style.transform = `translate(${x * 0.25}px, ${y * 0.25}px)`;
       };
       const ml = () => {
-          btn.style.transform = 'translate(0px, 0px)';
+          htmlBtn.style.transform = 'translate(0px, 0px)';
       };
-      btn.addEventListener('mousemove', mm);
-      btn.addEventListener('mouseleave', ml);
-      magneticListeners.push({btn, mm, ml});
+      htmlBtn.addEventListener('mousemove', mm);
+      htmlBtn.addEventListener('mouseleave', ml);
+      magneticListeners.push({btn: htmlBtn, mm: mm as EventListener, ml: ml as EventListener});
   });
 
-  document.querySelectorAll('.glass').forEach((card: any) => {
-      card.addEventListener('mousemove', (e: any) => {
-          const rect = card.getBoundingClientRect();
-          const x = ((e.clientX - rect.left) / rect.width) * 100;
-          const y = ((e.clientY - rect.top) / rect.height) * 100;
-          card.style.background = `radial-gradient(circle at ${x}% ${y}%, rgba(110, 86, 255, 0.06), rgba(18, 18, 22, 0.45) 60%)`;
+  document.querySelectorAll('.glass').forEach((card) => {
+      const htmlCard = card as HTMLElement;
+      htmlCard.addEventListener('mousemove', (e: MouseEvent | Event) => {
+          const mouseEvent = e as MouseEvent;
+          const rect = htmlCard.getBoundingClientRect();
+          const x = ((mouseEvent.clientX - rect.left) / rect.width) * 100;
+          const y = ((mouseEvent.clientY - rect.top) / rect.height) * 100;
+          htmlCard.style.background = `radial-gradient(circle at ${x}% ${y}%, rgba(110, 86, 255, 0.06), rgba(18, 18, 22, 0.45) 60%)`;
       });
-      card.addEventListener('mouseleave', () => {
-          card.style.background = '';
+      htmlCard.addEventListener('mouseleave', () => {
+          htmlCard.style.background = '';
       });
   });
 
@@ -64,8 +68,8 @@ export function initLegacyScripts() {
   const counterObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
           if (entry.isIntersecting) {
-              const el: any = entry.target;
-              const target = parseFloat(el.dataset.target);
+              const el = entry.target as HTMLElement;
+              const target = parseFloat(el.dataset.target || '0');
               const suffix = el.dataset.suffix || '';
               const duration = 2000;
               const startTime = performance.now();
@@ -156,7 +160,7 @@ export function initLegacyScripts() {
   let terminalStarted = false;
   if(terminalBody) terminalBody.innerHTML = ''; // reset on hot reload
   const terminalObserver = new IntersectionObserver((entries) => {
-      entries.forEach((entry: any) => {
+      entries.forEach((entry) => {
           if (entry.isIntersecting && !terminalStarted) {
               terminalStarted = true;
               let lineIndex = 0;

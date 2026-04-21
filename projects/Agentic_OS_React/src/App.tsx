@@ -3,7 +3,6 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { BackgroundGradientAnimation } from "@/components/ui/background-gradient-animation";
 import NeuralBackground from "@/components/ui/flow-field-background";
-import { TubesBackground } from "@/components/ui/neon-flow";
 import { SplashCover } from "@/components/sections/SplashCover";
 import { CinematicFooter } from "@/components/ui/motion-footer";
 import { AgenticHoverProvider } from "@/components/ui/agentic-hover-link";

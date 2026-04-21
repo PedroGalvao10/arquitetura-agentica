@@ -39,17 +39,8 @@ export function LandingPage() {
     
     
     <div 
-      className="cosmic-flow-container relative overflow-visible" 
-      style={{ 
-        backgroundImage: `url(${cosmicBg})`,
-        backgroundAttachment: 'fixed',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center center',
-        minHeight: '100vh',
-        width: '100%',
-        zIndex: 50,
-        display: 'block'
-      }}
+      className="cosmic-flow-container relative overflow-visible bg-fixed bg-cover bg-center min-h-screen w-full z-50 block" 
+      style={{ backgroundImage: `url(${cosmicBg})` }}
     >
       <div className="cosmic-frosted-mask" />
       
@@ -84,15 +75,7 @@ export function LandingPage() {
             </div>
 
             {/* Lado direito — robô 3D interativo com escala aumentada e mergulho no fade */}
-            <div 
-              className="hidden md:block flex-1 relative"
-              style={{ 
-                maskImage: 'linear-gradient(to bottom, black 75%, transparent 95%)',
-                WebkitMaskImage: 'linear-gradient(to bottom, black 75%, transparent 95%)',
-                transform: 'scale(1.25) translateY(80px) translateX(20px)',
-                transformOrigin: 'center center'
-              }}
-            >
+            <div className="hidden md:block flex-1 relative hero-spline-wrapper">
               <SplineScene
                 scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
                 className="w-full h-full"

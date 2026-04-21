@@ -100,7 +100,7 @@ export default function NeuralBackground({
         context.fillStyle = color;
         const alpha = 1 - Math.abs(this.age / this.life - 0.5) * 2;
         context.globalAlpha = alpha;
-        context.fillRect(this.x, this.y, 1.5, 1.5);
+        context.fillRect(this.x, this.y, particleSize, particleSize);
       }
     }
 
@@ -173,7 +173,7 @@ export default function NeuralBackground({
       document.removeEventListener("visibilitychange", visibilityHandler);
       cancelAnimationFrame(animationFrameId);
     };
-  }, [color, trailOpacity, particleCount, speed]);
+  }, [color, trailOpacity, particleCount, speed, particleSize]);
 
   return (
     <div
