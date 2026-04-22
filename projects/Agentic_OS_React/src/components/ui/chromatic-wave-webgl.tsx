@@ -116,8 +116,7 @@ export function ChromaticWaveWebGL() {
   return (
     <canvas
       ref={ref}
-      className="absolute inset-0 w-full h-full"
-      style={{ zIndex: 1, mixBlendMode: 'screen', opacity: 0.2, pointerEvents: 'none' }}
+      className="absolute inset-0 w-full h-full z-[1] mix-blend-screen opacity-20 pointer-events-none"
     />
   );
 }

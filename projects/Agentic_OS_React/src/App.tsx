@@ -14,6 +14,8 @@ import { ChromaticWaveWebGL } from "@/components/ui/chromatic-wave-webgl";
 import { IcosahedronWebGL } from "@/components/ui/icosahedron-webgl";
 import { FluidCursorWebGL } from "@/components/ui/fluid-cursor-webgl";
 import NeuralBackground from "@/components/ui/flow-field-background";
+import { StarsBackground } from "@/components/ui/stars-background";
+import cosmicBg from './assets/cosmic_bg.png';
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -97,38 +99,29 @@ function App() {
 
   return (
     <AgenticHoverProvider>
-      <div className="relative w-full min-h-screen bg-black text-white font-sans selection:bg-purple-500/30">
-        <Navbar />
-        
-        {/* ═══ ATMOSPHERIC BACKGROUND SYSTEM ═══
-             5 camadas empilhadas com mix-blend-mode: screen (aditivo)
-             Tudo fixed + pointer-events: none → conteúdo intocável */}
-        <div className="fixed inset-0 z-0 pointer-events-none bg-black">
-          {/* z-0: Aurora Nebula — FBM noise, brilho atmosférico ~6% */}
-          <AuroraWebGL />
-
-          {/* z-1: Chromatic Wave — Aberração cromática senoidal */}
-          <ChromaticWaveWebGL />
-
-          {/* z-2: Icosahedron Wireframe — Sólido platônico rotativo */}
-          <IcosahedronWebGL />
-
-          {/* z-3: Fluid Cursor — Glow FBM seguindo o mouse */}
-          <FluidCursorWebGL />
-
-          {/* z-4: Neural Particles — Canvas 2D flow field (camada mais alta) */}
-          <div className="absolute inset-0" style={{ zIndex: 4, mixBlendMode: 'screen', opacity: 0.5 }}>
-            <NeuralBackground 
-              color="#6e56ff" 
-              trailOpacity={0.04} 
-              particleCount={600} 
-              particleSize={2.0}
-              speed={0.3} 
-            />
-          </div>
+      {/* ═══ ATMOSPHERIC BACKGROUND SYSTEM (Fixed) ═══ */}
+      <div className="fixed inset-0 pointer-events-none overflow-hidden bg-[#030305] z-0">
+        <div className="absolute inset-0 z-0"><StarsBackground density={1400} opacity={0.8} /></div>
+        <div 
+          className="absolute inset-0 z-1 opacity-45 cosmic-bg-overlay mix-blend-screen"
+          style={{ "--cosmic-url": `url(${cosmicBg})` } as React.CSSProperties}
+        />
+        <div className="absolute inset-0 z-2 opacity-45"><AuroraWebGL /></div>
+        <div className="absolute inset-0 z-3 opacity-35"><ChromaticWaveWebGL /></div>
+        <div className="absolute inset-0 z-4 opacity-50"><IcosahedronWebGL /></div>
+        <div className="absolute inset-0 z-5 opacity-60">
+          <NeuralBackground color="#8b5cf6" trailOpacity={0.15} particleCount={1400} particleSize={2.5} speed={0.4} />
         </div>
+        <div className="absolute inset-0 z-6 opacity-80 mix-blend-screen pointer-events-none">
+          <FluidCursorWebGL />
+        </div>
+      </div>
 
-        {/* SPLASH COVER */}
+      {/* ═══ MAIN CONTENT LAYER (Scrollable) ═══ */}
+      <div className="relative w-full min-h-screen text-white font-sans selection:bg-purple-500/30 z-10">
+        <Navbar />
+
+        {/* SPLASH COVER (Initial Reveal) */}
         <div 
           ref={splashRef} 
           className="fixed inset-0 z-[100] w-full h-screen will-change-[clip-path,opacity] bg-[#030305]"
@@ -136,7 +129,7 @@ function App() {
           <SplashCover />
         </div>
 
-        {/* CONTEÚDO PRINCIPAL (LANDING PAGE COM PIN) */}
+        {/* LANDING PAGE CONTENT (Scroll Triggered) */}
         <main 
           ref={landingRef} 
           className="relative z-10 w-full min-h-screen overflow-visible will-change-[transform,opacity]"

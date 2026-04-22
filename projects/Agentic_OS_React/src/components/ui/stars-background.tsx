@@ -91,7 +91,7 @@ export function StarsBackground({
           x: Math.random() * width * 6 - width * 3,
           y: Math.random() * height * 6 - height * 3,
           z: z,
-          size: Math.random() * 1.8 + 0.6,
+          size: Math.random() * 2.8 + 1.2,
           opacity: starOpacity,
           color: colorKey,
           speed: (Math.random() * 0.4 + 0.1) * speedFactor

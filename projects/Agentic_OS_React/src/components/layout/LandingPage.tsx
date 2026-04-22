@@ -5,7 +5,6 @@ import { SplineScene } from '@/components/ui/spline-scene';
 import { Spotlight } from '@/components/ui/spotlight';
 import { useScroll, useTransform, motion } from 'framer-motion';
 import { CursorDrivenParticleTypography } from '@/components/ui/cursor-driven-particles-typography';
-import cosmicBg from '../../assets/cosmic_bg.png';
 
 // ---- REBUILT SECTIONS (v2) ----
 import { MetricsSection } from '@/components/sections/MetricsSection';
@@ -16,7 +15,6 @@ import { SkillsSection } from '@/components/sections/SkillsSection';
 import { BrainSection } from '@/components/sections/BrainSection';
 import { EvolutionSection } from '@/components/sections/EvolutionSection';
 import { AnnealingSection } from '@/components/sections/AnnealingSection';
-import { GovernanceSection } from '@/components/sections/GovernanceSection';
 
 export function LandingPage() {
   const { scrollYProgress } = useScroll();
@@ -43,8 +41,7 @@ export function LandingPage() {
       {/*  COSMIC FLOW — HERO + MANIFESTO (INTOCÁVEL) */}
       {/* ============================================ */}
       <div
-        className="cosmic-flow-container relative overflow-visible bg-fixed bg-cover bg-center min-h-screen w-full z-50 block"
-        style={{ backgroundImage: `url(${cosmicBg})` }}
+        className="cosmic-flow-container relative overflow-visible bg-transparent min-h-screen w-full z-10 block"
       >
         <div className="cosmic-frosted-mask" />
 
@@ -136,7 +133,6 @@ export function LandingPage() {
       <BrainSection />
       <EvolutionSection />
       <AnnealingSection />
-      <GovernanceSection />
     </div>
   );
 }

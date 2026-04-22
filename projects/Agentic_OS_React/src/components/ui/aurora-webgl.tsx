@@ -153,8 +153,7 @@ export function AuroraWebGL() {
   return (
     <canvas
       ref={ref}
-      className="absolute inset-0 w-full h-full"
-      style={{ zIndex: 0, mixBlendMode: 'screen', pointerEvents: 'none' }}
+      className="absolute inset-0 w-full h-full z-0 mix-blend-screen pointer-events-none"
     />
   );
 }

@@ -612,6 +612,7 @@
   color: rgba(255, 255, 255, 0.15);
   font-size: 0.72rem;
   margin-right: 16px;
+  -webkit-user-select: none;
   user-select: none;
 }
 
@@ -1091,17 +1092,49 @@
   .s-hybrid__grid { grid-template-columns: 1fr; }
   .s-skills__grid { grid-template-columns: repeat(2, 1fr); }
   .s-governance__grid { grid-template-columns: repeat(2, 1fr); }
-  .s-brain__content { flex-direction: column; }
+  .s-brain__content { flex-direction: column; gap: 40px; }
   .s-evolution__body { flex-direction: column; }
-  .s-evolution__visual { position: static; }
+  .s-evolution__visual { position: static; width: 100%; }
+  
+  .s-layer { gap: 24px; padding: 32px; }
 }
 
 @media (max-width: 768px) {
-  .s-metrics__grid { grid-template-columns: 1fr; }
-  .s-skills__grid { grid-template-columns: 1fr; }
-  .s-governance__grid { grid-template-columns: 1fr; }
-  .s-layer { flex-direction: column; }
-  .s-layer__visual { min-height: 180px; }
-  .s-annealing__card { flex-direction: column; }
-  .s-title { letter-spacing: -1px; }
+  .s-metrics { padding: 60px 20px 40px; }
+  .s-metrics__grid { grid-template-columns: 1fr; gap: 12px; }
+  .s-metrics__card { padding: 32px 24px; }
+  
+  .s-architecture { padding: 60px 20px; }
+  .s-layer { flex-direction: column; padding: 24px; gap: 20px; }
+  .s-layer__visual { min-height: 200px; order: -1; }
+  .s-layer__number { font-size: 5rem; top: -10px; right: 15px; }
+  
+  .s-skills { padding: 80px 20px; }
+  .s-skills__grid { grid-template-columns: 1fr; gap: 12px; }
+  
+  .s-brain { padding: 80px 20px; }
+  .s-brain__content { gap: 32px; }
+  .s-brain__features { margin-top: 24px; }
+  
+  .s-evolution { padding: 80px 20px; }
+  .s-evolution__visual { padding: 20px; }
+  .s-evolution__fitness-value { font-size: 2.8rem; }
+  
+  .s-annealing { padding: 40px 20px 80px; }
+  .s-annealing__card { flex-direction: column; padding: 24px; gap: 24px; }
+  
+  .s-governance { padding: 60px 20px 120px; }
+  .s-governance__grid { grid-template-columns: 1fr; gap: 12px; }
+  
+  .s-title { 
+    font-size: clamp(2rem, 8vw, 2.8rem); 
+    letter-spacing: -1px; 
+    line-height: 1.15;
+  }
+  
+  .s-label { 
+    font-size: 0.6rem; 
+    letter-spacing: 2.5px; 
+    margin-bottom: 14px; 
+  }
 }

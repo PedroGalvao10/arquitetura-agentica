@@ -1283,8 +1283,8 @@ h2.section-title .reveal-text { display: block; }
 /*  HERO 3D SPLINE WRAPPER                      */
 /* ============================================ */
 .hero-spline-wrapper {
-  mask-image: linear-gradient(to bottom, black 75%, transparent 95%);
   -webkit-mask-image: linear-gradient(to bottom, black 75%, transparent 95%);
+  mask-image: linear-gradient(to bottom, black 75%, transparent 95%);
   transform: scale(1.25) translateY(80px) translateX(20px);
   transform-origin: center center;
 }

@@ -112,7 +112,10 @@ export function MetricsSection() {
             className={`s-metrics__card ${i === 0 ? 's-metrics__card--featured' : ''}`}
             variants={cardVariants}
           >
-            <div className="s-metrics__card-shine" style={{ '--accent-color': m.accent } as React.CSSProperties} />
+            <div 
+              className="s-metrics__card-shine" 
+              style={{ '--accent-color': m.accent } as React.CSSProperties} 
+            />
             <div className="s-metrics__card-content">
               {m.displayValue ? (
                 <span className="metric-value-v2">{m.displayValue}</span>

@@ -131,6 +131,7 @@ export const CursorDrivenParticleTypography: React.FC<CursorDrivenParticleTypogr
 
     let animationFrameId: number;
     let particles: Particle[] = [];
+    let isVisible = false;
 
     let mouseX = -1000;
     let mouseY = -1000;
@@ -203,6 +204,7 @@ export const CursorDrivenParticleTypography: React.FC<CursorDrivenParticleTypogr
     };
 
     const animate = () => {
+      if (!isVisible) return;
       ctx.clearRect(0, 0, containerWidth, containerHeight);
 
       particles.forEach((particle) => {
@@ -234,8 +236,22 @@ export const CursorDrivenParticleTypography: React.FC<CursorDrivenParticleTypogr
     }, 100);
 
     const resizeObserver = new ResizeObserver(handleResize);
+    const intersectionObserver = new IntersectionObserver(
+      (entries) => {
+        const entry = entries[0];
+        isVisible = entry.isIntersecting;
+        if (isVisible) {
+          animate();
+        } else {
+          cancelAnimationFrame(animationFrameId);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
     if (containerRef.current) {
       resizeObserver.observe(containerRef.current);
+      intersectionObserver.observe(containerRef.current);
     }
 
     canvas.addEventListener("mousemove", handleMouseMove, { passive: true });
@@ -244,6 +260,7 @@ export const CursorDrivenParticleTypography: React.FC<CursorDrivenParticleTypogr
     return () => {
       clearTimeout(timeoutId);
       resizeObserver.disconnect();
+      intersectionObserver.disconnect();
       canvas.removeEventListener("mousemove", handleMouseMove);
       canvas.removeEventListener("mouseleave", handleMouseLeave);
       cancelAnimationFrame(animationFrameId);

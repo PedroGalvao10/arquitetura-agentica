@@ -91,8 +91,8 @@ void main() {
 
   float scale = 0.35;
   // Mouse proximity: thicker lines near cursor
-  float thickness = mix(0.0015, 0.004, mouseInfluence);
-  float blur = mix(0.0002, 0.002, mouseInfluence);
+  float thickness = mix(0.002, 0.007, mouseInfluence);
+  float blur = mix(0.0003, 0.0025, mouseInfluence);
 
   vec3 v[12];
   getIcosahedronVertices(v);
@@ -134,10 +134,10 @@ void main() {
   result = clamp(result, 0.0, 1.0);
 
   // White with subtle blue tint
-  vec3 color = vec3(0.85, 0.90, 1.0) * result;
+  vec3 color = vec3(0.9, 0.95, 1.0) * result;
 
   // Soft vignette
-  color *= 1.0 - length(st) * 0.15;
+  color *= 1.1 - length(st) * 0.15;
 
   gl_FragColor = vec4(color, 1.0);
 }
@@ -223,9 +223,8 @@ export function IcosahedronWebGL() {
     };
 
     const onMove = (e: MouseEvent) => {
-      const rect = c.getBoundingClientRect();
-      mouseRef.current.x = e.clientX - rect.left;
-      mouseRef.current.y = e.clientY - rect.top;
+      mouseRef.current.x = e.clientX;
+      mouseRef.current.y = e.clientY;
     };
 
     resize();
@@ -250,8 +249,7 @@ export function IcosahedronWebGL() {
   return (
     <canvas
       ref={ref}
-      className="absolute inset-0 w-full h-full"
-      style={{ zIndex: 2, mixBlendMode: 'screen', opacity: 0.2, pointerEvents: 'none' }}
+      className="absolute inset-0 w-full h-full z-[2] mix-blend-screen opacity-50 pointer-events-none"
     />
   );
 }

@@ -58,12 +58,12 @@ void main() {
   float trailStrength = smoothstep(0.0, 0.01, vel);
 
   // Glow falloff — stronger near cursor, fades with distance
-  float glow = exp(-dist * 8.0) * turb * 0.6;
+  float glow = exp(-dist * 8.0) * turb * 1.5;
 
   // Secondary softer glow ring
-  float ring = exp(-dist * 3.0) * turb * 0.15;
+  float ring = exp(-dist * 3.0) * turb * 0.5;
 
-  float total = (glow + ring) * (0.6 + trailStrength * 0.4);
+  float total = (glow + ring) * (0.8 + trailStrength * 0.6);
 
   // Cool blue-white color
   vec3 color = vec3(0.7, 0.85, 1.0) * total;
@@ -178,8 +178,7 @@ export function FluidCursorWebGL() {
   return (
     <canvas
       ref={ref}
-      className="absolute inset-0 w-full h-full"
-      style={{ zIndex: 3, mixBlendMode: 'screen', pointerEvents: 'none' }}
+      className="absolute inset-0 w-full h-full z-[3] mix-blend-screen pointer-events-none"
     />
   );
 }
