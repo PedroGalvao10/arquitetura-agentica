@@ -10,7 +10,7 @@ import { FloatingProfile } from "@/components/ui/floating-profile";
 // ─── Atmospheric Background System (5 Layers) ───
 import { AuroraWebGL } from "@/components/ui/aurora-webgl";
 import { ChromaticWaveWebGL } from "@/components/ui/chromatic-wave-webgl";
-import { IcosahedronWebGL } from "@/components/ui/icosahedron-webgl";
+import { WovenParticleGeometry } from "@/components/ui/woven-particle-geometry";
 import { FluidSimulationBackground } from "@/components/ui/fluid-simulation-background";
 import NeuralBackground from "@/components/ui/flow-field-background";
 import { StarsBackground } from "@/components/ui/stars-background";
@@ -107,7 +107,7 @@ function App() {
         />
         <div className="absolute inset-0 z-2 opacity-45"><AuroraWebGL /></div>
         <div className="absolute inset-0 z-3 opacity-35"><ChromaticWaveWebGL /></div>
-        <div className="absolute inset-0 z-4 opacity-50"><IcosahedronWebGL /></div>
+        <div className="absolute inset-0 z-4 opacity-50"><WovenParticleGeometry /></div>
         <div className="absolute inset-0 z-5 opacity-60">
           <NeuralBackground color="#8b5cf6" trailOpacity={0.15} particleCount={1400} particleSize={2.5} speed={0.4} />
         </div>
