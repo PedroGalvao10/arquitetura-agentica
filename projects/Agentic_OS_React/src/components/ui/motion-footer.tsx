@@ -65,9 +65,9 @@ export function CinematicFooter() {
   return (
     <div
       ref={wrapperRef}
-      className="relative h-screen w-full mt-64 footer-clip z-0"
+      className="relative w-full mt-40 footer-clip z-0"
     >
-      <footer className="fixed bottom-0 left-0 flex h-screen w-full flex-col justify-between overflow-hidden text-neutral-100 cinematic-footer-wrapper border-t border-white/5 z-[5]">
+      <footer className="relative flex min-h-screen w-full flex-col justify-between overflow-hidden text-neutral-100 cinematic-footer-wrapper border-t border-white/5 z-[5]">
         <div className="footer-aurora absolute left-1/2 top-1/2 h-[60vh] w-[80vw] -translate-x-1/2 -translate-y-1/2 animate-footer-breathe rounded-[50%] blur-[80px] pointer-events-none z-0" />
         <div className="footer-bg-grid absolute inset-0 z-0 pointer-events-none opacity-40" />
 
@@ -99,11 +99,7 @@ export function CinematicFooter() {
 
           <div ref={linksRef} className="flex flex-col items-center gap-6 w-full">
             <div className="flex flex-wrap justify-center gap-4 w-full">
-              <MagneticButton as="a" href="#visao"
-                className="footer-glass-pill px-10 py-5 rounded-full font-bold text-base flex items-center gap-3 text-white btn-cta-custom">
-                <span className="dot-indicator bg-violet-500 shadow-[0_0_8px_#7C3AED] w-2 h-2 rounded-full" />
-                Solicitar Acesso Antecipado
-              </MagneticButton>
+
 
               <MagneticButton as="a" href="#fluxo"
                 className="footer-glass-pill px-10 py-5 rounded-full font-bold text-base text-white hover:text-white">

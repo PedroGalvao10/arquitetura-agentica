@@ -35,7 +35,7 @@ export function Navbar() {
             <span className="status-dot"></span>
             <span>ONLINE</span>
           </div>
-          <button className="btn-primary magnetic" id="btn-activate">Entrar no Sistema</button>
+
         </div>
       </div>
     </nav>

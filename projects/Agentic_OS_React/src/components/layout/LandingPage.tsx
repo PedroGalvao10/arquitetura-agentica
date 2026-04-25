@@ -15,8 +15,10 @@ import { SkillsSection } from '@/components/sections/SkillsSection';
 import { BrainSection } from '@/components/sections/BrainSection';
 import { EvolutionSection } from '@/components/sections/EvolutionSection';
 import { AnnealingSection } from '@/components/sections/AnnealingSection';
+import { GovernanceSection } from '@/components/sections/GovernanceSection';
+import { CinematicFooter } from '@/components/ui/motion-footer';
 
-export function LandingPage() {
+export default function LandingPage() {
   const { scrollYProgress } = useScroll();
   const yParallax = useTransform(scrollYProgress, [0, 1], [0, -200]);
   const scaleParallax = useTransform(scrollYProgress, [0, 1], [1, 1.1]);
@@ -133,8 +135,8 @@ export function LandingPage() {
       <BrainSection />
       <EvolutionSection />
       <AnnealingSection />
+      <GovernanceSection />
+      <CinematicFooter />
     </div>
   );
 }
-
-export default LandingPage;

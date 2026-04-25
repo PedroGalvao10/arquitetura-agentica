@@ -14,8 +14,8 @@ const FRAG = `
 precision highp float;
 uniform vec2 u_res;
 uniform float u_time;
-uniform vec2 u_mouse;     // Smoothed mouse position (normalized 0-1)
-uniform vec2 u_velocity;  // Mouse velocity for trail direction
+uniform vec2 u_mouse;     
+uniform vec2 u_velocity;  
 
 float hash(vec2 p) {
   return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453);
@@ -44,29 +44,32 @@ void main() {
   vec2 uv = gl_FragCoord.xy / u_res;
   vec2 aspect = vec2(u_res.x / u_res.y, 1.0);
 
-  // Distance from mouse (aspect-corrected)
   vec2 mouseUV = u_mouse;
   vec2 diff = (uv - mouseUV) * aspect;
   float dist = length(diff);
 
-  // FBM turbulence centered on mouse
   vec2 noiseCoord = diff * 3.0 + u_time * 0.3;
   float turb = fbm(noiseCoord) * 0.5 + 0.5;
 
-  // Velocity-based trail stretch
   float vel = length(u_velocity);
   float trailStrength = smoothstep(0.0, 0.01, vel);
 
-  // Glow falloff — stronger near cursor, fades with distance
-  float glow = exp(-dist * 8.0) * turb * 1.5;
-
-  // Secondary softer glow ring
-  float ring = exp(-dist * 3.0) * turb * 0.5;
+  // Reduzido: Distancia maior no expoente (-15.0) e multiplicador menor (0.8)
+  float glow = exp(-dist * 15.0) * turb * 0.8; 
+  float ring = exp(-dist * 6.0) * turb * 0.2;
 
   float total = (glow + ring) * (0.8 + trailStrength * 0.6);
 
-  // Cool blue-white color
-  vec3 color = vec3(0.7, 0.85, 1.0) * total;
+  // Ciclo de cores vibrantes dentro da identidade (Roxo, Ciano, Violeta)
+  float t = u_time * 0.4;
+  vec3 c1 = vec3(0.5, 0.3, 1.0); // Roxo Agentic
+  vec3 c2 = vec3(0.0, 0.8, 1.0); // Ciano
+  vec3 c3 = vec3(1.0, 0.0, 0.8); // Magenta/Rosa
+  
+  vec3 colorCycle = mix(c1, c2, sin(t) * 0.5 + 0.5);
+  colorCycle = mix(colorCycle, c3, cos(t * 0.8) * 0.5 + 0.5);
+  
+  vec3 color = colorCycle * total;
 
   gl_FragColor = vec4(color, 1.0);
 }

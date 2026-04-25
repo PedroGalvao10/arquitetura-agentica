@@ -2,9 +2,8 @@ import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SplashCover } from "@/components/sections/SplashCover";
-import { CinematicFooter } from "@/components/ui/motion-footer";
 import { AgenticHoverProvider } from "@/components/ui/agentic-hover-link";
-import { LandingPage } from "@/components/layout/LandingPage";
+import LandingPage from "@/components/layout/LandingPage";
 import { Navbar } from "@/components/layout/Navbar";
 import { FloatingProfile } from "@/components/ui/floating-profile";
 
@@ -12,7 +11,7 @@ import { FloatingProfile } from "@/components/ui/floating-profile";
 import { AuroraWebGL } from "@/components/ui/aurora-webgl";
 import { ChromaticWaveWebGL } from "@/components/ui/chromatic-wave-webgl";
 import { IcosahedronWebGL } from "@/components/ui/icosahedron-webgl";
-import { FluidCursorWebGL } from "@/components/ui/fluid-cursor-webgl";
+import { FluidSimulationBackground } from "@/components/ui/fluid-simulation-background";
 import NeuralBackground from "@/components/ui/flow-field-background";
 import { StarsBackground } from "@/components/ui/stars-background";
 import cosmicBg from './assets/cosmic_bg.png';
@@ -113,7 +112,7 @@ function App() {
           <NeuralBackground color="#8b5cf6" trailOpacity={0.15} particleCount={1400} particleSize={2.5} speed={0.4} />
         </div>
         <div className="absolute inset-0 z-6 opacity-80 mix-blend-screen pointer-events-none">
-          <FluidCursorWebGL />
+          <FluidSimulationBackground />
         </div>
       </div>
 
@@ -137,7 +136,6 @@ function App() {
           <LandingPage />
         </main>
 
-        <CinematicFooter />
         <FloatingProfile />
       </div>
     </AgenticHoverProvider>

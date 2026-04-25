@@ -68,11 +68,12 @@ export function MagneticButton({
     ...(Component === 'button' ? { onClick, type: 'button' as const } : {}),
   };
 
+  const MotionComponent = motion[Component as keyof typeof motion] || motion.div;
+  
   return (
-    <motion.div
+    // @ts-ignore
+    <MotionComponent
       {...commonProps}
-      // @ts-ignore
-      as={Component}
     >
       <span className="relative z-10">{children}</span>
       {isHovered && (
@@ -84,6 +85,6 @@ export function MagneticButton({
           exit={{ opacity: 0, scale: 0.8 }}
         />
       )}
-    </motion.div>
+    </MotionComponent>
   );
 }
