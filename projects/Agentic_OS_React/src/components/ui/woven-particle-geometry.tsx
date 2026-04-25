@@ -85,6 +85,10 @@ export const WovenParticleGeometry = () => {
     const points = new THREE.Points(geometry, material);
     scene.add(points);
 
+    const raycaster = new THREE.Raycaster();
+    const plane = new THREE.Plane(new THREE.Vector3(0, 0, 1), 0); // Z=0 plane
+    const planePoint = new THREE.Vector3();
+
     const handleMouseMove = (event: MouseEvent) => {
         mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
         mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
@@ -95,8 +99,14 @@ export const WovenParticleGeometry = () => {
         const raf = requestAnimationFrame(animate);
         const elapsedTime = clock.getElapsedTime();
         
-        // Convert mouse screen to world coords (rough approximation for 2D feel)
-        mouseWorld.set(mouse.x * 3.5, mouse.y * 3.5, 0);
+        // Update raycaster for precise world position on Z=0 plane
+        raycaster.setFromCamera(mouse, camera);
+        raycaster.ray.intersectPlane(plane, planePoint);
+
+        // Convert world mouse position to local space of the points object
+        // This is crucial because 'points' is rotating!
+        const localMouse = planePoint.clone();
+        points.worldToLocal(localMouse);
 
         const posAttr = geometry.attributes.position.array as Float32Array;
 
@@ -105,30 +115,31 @@ export const WovenParticleGeometry = () => {
             const iy = i * 3 + 1;
             const iz = i * 3 + 2;
 
-            // Simple vector math without object creation for performance
-            const dx = posAttr[ix] - mouseWorld.x;
-            const dy = posAttr[iy] - mouseWorld.y;
-            const dz = posAttr[iz] - mouseWorld.z;
+            // Distance calculation in local space
+            const dx = posAttr[ix] - localMouse.x;
+            const dy = posAttr[iy] - localMouse.y;
+            const dz = posAttr[iz] - localMouse.z;
             const distSq = dx*dx + dy*dy + dz*dz;
-            const dist = Math.sqrt(distSq);
 
-            if (dist < 1.2) {
-                const force = (1.2 - dist) * 0.015;
+            // Interaction radius: 0.8 units in local space
+            if (distSq < 0.64) { // 0.8^2
+                const dist = Math.sqrt(distSq);
+                const force = (0.8 - dist) * 0.05; // Stronger force
                 const invDist = 1.0 / (dist + 0.0001);
                 velocities[ix] += (dx * invDist) * force;
                 velocities[iy] += (dy * invDist) * force;
                 velocities[iz] += (dz * invDist) * force;
             }
 
-            // Return to original position (Hooke's Law lite)
-            velocities[ix] += (originalPositions[ix] - posAttr[ix]) * 0.002;
-            velocities[iy] += (originalPositions[iy] - posAttr[iy]) * 0.002;
-            velocities[iz] += (originalPositions[iz] - posAttr[iz]) * 0.002;
+            // Return to original position
+            velocities[ix] += (originalPositions[ix] - posAttr[ix]) * 0.005;
+            velocities[iy] += (originalPositions[iy] - posAttr[iy]) * 0.005;
+            velocities[iz] += (originalPositions[iz] - posAttr[iz]) * 0.005;
             
             // Damping
-            velocities[ix] *= 0.94;
-            velocities[iy] *= 0.94;
-            velocities[iz] *= 0.94;
+            velocities[ix] *= 0.92;
+            velocities[iy] *= 0.92;
+            velocities[iz] *= 0.92;
 
             posAttr[ix] += velocities[ix];
             posAttr[iy] += velocities[iy];
